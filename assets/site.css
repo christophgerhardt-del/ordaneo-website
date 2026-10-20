@@ -59,7 +59,7 @@
   --band-accent: #ec955c;     /* Kupfer hell: Textstufe auf Graphit */
   --band-line: #2c3038;
   --logo-tile: #15171b;
-  --logo-ring: #f9fafb;
+  --logo-line: #f9fafb;
   --logo-unit: #c0500c;
   --shot-hatch: rgba(21, 23, 27, 0.045);
   --shadow: 0 1px 2px rgba(16, 18, 22, 0.05), 0 12px 32px -12px rgba(16, 18, 22, 0.14);
@@ -93,7 +93,7 @@
     --band-surface: #1b1e23;
     --band-line: #2c3038;
     --logo-tile: #f3f4f6;
-    --logo-ring: #0e1114;
+    --logo-line: #0e1114;
     --logo-unit: #c0500c;
     --shot-hatch: rgba(243, 244, 246, 0.04);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
@@ -143,7 +143,7 @@ code, .mono { font-family: var(--mono); font-size: 0.92em; font-variant-numeric:
 /* ---------- Logo ---------- */
 .lockup { height: 26px; width: auto; color: var(--fg); }
 .lockup .lk-tile { fill: var(--logo-tile); }
-.lockup .lk-ring { stroke: var(--logo-ring); }
+.lockup .lk-frame { stroke: var(--logo-line); }
 .lockup .lk-unit { fill: var(--logo-unit); }
 
 /* ---------- Kopf ---------- */
