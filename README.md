@@ -1,9 +1,9 @@
-# ordaneo.com – Website
+# ordaneo.de – Website
 
 Statische Produktseite für **Ordaneo**, die Warenwirtschaft für Handel und Großhandel. Reines HTML und CSS, kein
 Build-Schritt, kein JavaScript, keine externen Anfragen zur Laufzeit (keine CDN, keine Google Fonts, kein Tracking).
-Veröffentlicht werden soll sie über **GitHub Pages** unter **https://ordaneo.com**; `ordaneo.de` leitet dorthin um.
-Die Anwendung selbst läuft unter `erp.ordaneo.com` (heute noch `warenwirtschaft.actuvo.de`).
+Veröffentlicht werden soll sie über **GitHub Pages** unter **https://ordaneo.de**.
+Die Anwendung selbst läuft unter `erp.ordaneo.de` (seit 20.10.2026; `warenwirtschaft.actuvo.de` bleibt daneben erreichbar).
 
 Stand: 20.10.2026 · **Noch nicht veröffentlicht** – offene Punkte unten.
 
@@ -21,7 +21,7 @@ Stand: 20.10.2026 · **Noch nicht veröffentlicht** – offene Punkte unten.
 | `assets/screens/` | Produktbilder als WebP, hell und dunkel, je zwei bis drei Breiten (siehe „Produktbilder“) |
 | `assets/og.png` | Vorschaubild für geteilte Links (1200 × 630), gerendert aus `tools/og.html` |
 | `favicon.ico`, `site.webmanifest` | Favicon (16/32/48, in Chrome aus `assets/brand/favicon.svg` gerendert) und Symbole für den Startbildschirm |
-| `robots.txt`, `sitemap.xml`, `CNAME` | Suchmaschinen und eigene Domain (`ordaneo.com`) |
+| `robots.txt`, `sitemap.xml`, `CNAME` | Suchmaschinen und eigene Domain (`ordaneo.de`) |
 | `_config.yml` | sagt GitHub Pages, dass `README.md`, `tools/` und `BRAND.md` nicht veröffentlicht werden |
 | `tools/` | Vorlage und Skript für das Open-Graph-Bild (wird nicht veröffentlicht) |
 
@@ -80,7 +80,7 @@ NODE_PATH=~/warenwirtschaft-ordaneo/node_modules node tools/render-og.cjs http:/
 
 1. Repository anlegen (z. B. `ordaneo-website`), diesen Ordner als `main` pushen.
 2. Im Repository **Settings → Pages**: *Deploy from a branch*, Branch `main`, Ordner `/ (root)`.
-3. Unter **Custom domain** `ordaneo.com` eintragen (die Datei `CNAME` enthält das schon). Empfohlen vorher: die Domain
+3. Unter **Custom domain** `ordaneo.de` eintragen (die Datei `CNAME` enthält das schon). Empfohlen vorher: die Domain
    im GitHub-Konto unter **Settings → Pages → Verified domains** bestätigen (TXT-Eintrag
    `_github-pages-challenge-<konto>` bei Squarespace), damit niemand anderes sie für Pages nutzen kann.
 4. Sobald das Zertifikat ausgestellt ist (kann bis zu einer Stunde dauern): **Enforce HTTPS** einschalten.
@@ -90,7 +90,7 @@ Ohne eigene Domain läge die Seite unter `https://<konto>.github.io/ordaneo-webs
 
 ## DNS bei Squarespace (setzt Christoph)
 
-In Squarespace unter **Domains → ordaneo.com → DNS** zuerst die voreingestellten Squarespace-Einträge für `@` und `www`
+In Squarespace unter **Domains → ordaneo.de → DNS** zuerst die voreingestellten Squarespace-Einträge für `@` und `www`
 entfernen (Vorlage „Squarespace Defaults“), dann:
 
 | Host | Typ | Wert |
@@ -107,29 +107,23 @@ entfernen (Vorlage „Squarespace Defaults“), dann:
 | `_github-pages-challenge-<konto>` | TXT | Wert aus GitHub (Schritt 3 oben) |
 
 Die IP-Adressen vor dem Eintragen mit der GitHub-Hilfe „Managing a custom domain for your GitHub Pages site“
-abgleichen. Gibt es CAA-Einträge, muss `letsencrypt.org` erlaubt sein. `www.ordaneo.com` leitet GitHub dann selbst auf
-`ordaneo.com` um.
+abgleichen. Gibt es CAA-Einträge, muss `letsencrypt.org` erlaubt sein. `www.ordaneo.de` leitet GitHub dann selbst auf
+`ordaneo.de` um.
 
-**Nicht Teil der Website, aber in derselben Zone:** `erp` → A `167.233.15.101` (Demo-Server Hetzner Nürnberg). Der
-Server muss die neue Adresse zusätzlich kennen (Caddy, Zertifikat); `warenwirtschaft.actuvo.de` bleibt daneben
-bestehen. MX-, SPF-, DKIM- und DMARC-Einträge für das Postfach kommen vom Mail-Anbieter – beim Aufräumen der
-Squarespace-Vorgaben nichts davon löschen.
-
-### Weiterleitung ordaneo.de
-
-In Squarespace unter **Domains → ordaneo.de → Domain forwarding** (Weiterleitung) eine dauerhafte Weiterleitung (301)
-von `ordaneo.de` und `www.ordaneo.de` auf `https://ordaneo.com` anlegen, mit Pfad. Danach prüfen, dass
-`https://ordaneo.de` ohne Zertifikatswarnung weiterleitet. Klappt das nicht, kann `ordaneo.de` als zweite
-GitHub-Pages-Seite mit eigener `CNAME` betrieben werden, die per Meta-Refresh weiterleitet (schlechter: kein 301).
+**Nicht Teil der Website, aber in derselben Zone – nicht löschen:** `erp` → A `167.233.15.101` (Demo-Server Hetzner
+Nürnberg, seit 20.10.2026 eingetragen und am Server eingerichtet). Ebenso bleibt die Vorlage „E-Mail-Sicherheit“
+(SPF `-all`, DMARC `reject`) stehen, bis ein Postfach eingerichtet wird; dann ersetzen die MX-, SPF-, DKIM- und
+DMARC-Einträge des Mail-Anbieters diese Vorlage.
 
 ## Offene Punkte vor der Veröffentlichung
 
 - **Impressum und Datenschutz:** alle markierten Angaben ergänzen (Anbieter, Anschrift, Vertretung, Register,
   USt-IdNr., Aufsichtsbehörde, Postfach-Anbieter, Grundlage der Übermittlung an GitHub) und rechtlich prüfen lassen;
   dann die Hinweise „Entwurf – vor Veröffentlichung prüfen“ entfernen.
-- **Postfach `kontakt@ordaneo.com` muss noch eingerichtet werden** (MX und SPF/DKIM/DMARC bei Squarespace). Bis dahin
+- **Postfach `kontakt@ordaneo.de` muss noch eingerichtet werden** (MX und SPF/DKIM/DMARC bei Squarespace). Bis dahin
   laufen E-Mail-Links ins Leere.
-- **`erp.ordaneo.com`** ist noch nicht eingerichtet (DNS und Server). Alle „Demo ansehen“-Knöpfe zeigen dorthin.
+- **`erp.ordaneo.de`** ist seit 20.10.2026 eingerichtet (DNS, Server, Zertifikat); alle „Demo ansehen“-Knöpfe zeigen
+  dorthin. Den neuen Namen zeigt die Anwendung erst, wenn der Umbenennungs-Zweig ausgeliefert ist.
 - **Die Demo zeigt heute Namen und Logo des Erstkunden** und noch den alten Namen der Anwendung. Bevor die Website auf
   die Demo verlinkt, klären, ob das so öffentlich sein darf (sonst einen neutralen Beispielbetrieb voranstellen).
 - **Produktbilder** zeigen einen umbenannten Demo-Betrieb (siehe „Produktbilder“). Die öffentliche Demo sieht anders aus,

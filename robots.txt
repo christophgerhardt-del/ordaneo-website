@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ordaneo.com/sitemap.xml
+Sitemap: https://ordaneo.de/sitemap.xml
