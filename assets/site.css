@@ -17,6 +17,11 @@
   --gruen-text: #166534;
   --rose: #E11D48;
   --teal: #0D9488;
+  /* Bildmarke (BRAND.md §3/§6): Graphit-Kachel, heller Rahmen, orange Einheit – überall gleich. Das Orange gehört
+     nur der Einheit der Marke, nie Text, Flächen oder Schaltflächen der Website. */
+  --marke-kachel: #15171B;
+  --marke-rahmen: #F9FAFB;
+  --marke-einheit: #E8650E; /* 5,4 : 1 auf der Kachel */
   --schatten-karte: 0 2px 5px -1px rgba(50, 50, 93, 0.06), 0 1px 3px -1px rgba(0, 0, 0, 0.05);
   --schatten-schwebe: 0 13px 27px -5px rgba(50, 50, 93, 0.18), 0 8px 16px -8px rgba(0, 0, 0, 0.2);
   color-scheme: light;
@@ -79,13 +84,12 @@ nav.top.fest, body.menue-offen nav.top {
 }
 .nav-inner { display: flex; align-items: center; gap: 24px; height: 64px; }
 .logo { display: inline-flex; align-items: center; gap: 11px; color: #fff; text-decoration: none; transition: color 0.25s ease; flex: none; }
-.logo-mark { width: 36px; height: 36px; border-radius: 9px; background: rgba(255, 255, 255, 0.22); display: flex; align-items: center; justify-content: center; transition: background 0.25s ease; flex: none; }
+.logo-mark { width: 36px; height: 36px; border-radius: 9px; background: var(--marke-kachel); display: flex; align-items: center; justify-content: center; flex: none; }
 .logo-mark svg { width: 22px; height: 22px; }
-.logo-mark .zf { stroke: #fff; }
-.logo-mark .ze { fill: #fff; }
+.logo-mark .zf { stroke: var(--marke-rahmen); }
+.logo-mark .ze { fill: var(--marke-einheit); }
 .logo .wort { height: 17px; width: auto; display: block; margin-top: 1px; }
 nav.top.fest .logo, nav.top.dunkel-text .logo, body.menue-offen .logo { color: var(--navy); }
-nav.top.fest .logo-mark, nav.top.dunkel-text .logo-mark, body.menue-offen .logo-mark { background: var(--blue); }
 .nav-links { display: flex; gap: 4px; margin-left: auto; align-items: center; }
 .nav-links > a {
   color: #fff; text-decoration: none; font-size: 15px; font-weight: 500;
@@ -345,7 +349,7 @@ footer.gross a:hover { color: var(--navy); }
 footer.gross a.logo { display: inline-flex; padding: 0; color: var(--navy); }
 .fuss-marke { color: var(--faint); max-width: 36ch; }
 .fuss-marke .logo { color: var(--navy); margin-bottom: 12px; }
-.fuss-marke .logo-mark { background: var(--blue); width: 32px; height: 32px; border-radius: 8px; }
+.fuss-marke .logo-mark { width: 32px; height: 32px; border-radius: 8px; }
 .fuss-marke .logo-mark svg { width: 19px; height: 19px; }
 .fuss-marke .logo .wort { height: 15px; }
 .fuss-marke p + p { margin-top: 12px; }

@@ -27,7 +27,7 @@ Stand: 20.10.2026 abends (Neugestaltung im Stil von presio.eu) – offene Punkte
 | `favicon.ico`, `site.webmanifest` | Favicon (16/32/48, in Chrome aus `assets/brand/favicon.svg` gerendert) und Symbole für den Startbildschirm |
 | `robots.txt`, `sitemap.xml`, `CNAME` | Suchmaschinen und eigene Domain (`ordaneo.de`) |
 | `_config.yml` | sagt GitHub Pages, dass `README.md`, `tools/` und `BRAND.md` nicht veröffentlicht werden |
-| `tools/` | Vorlagen und Skripte für das Open-Graph-Bild und das Geräte-Bild (werden nicht veröffentlicht) |
+| `tools/` | Vorlagen und Skripte für die Markendateien, das Open-Graph-Bild und das Geräte-Bild (werden nicht veröffentlicht) |
 
 ## Lokale Vorschau
 
@@ -43,7 +43,8 @@ eigene Fehlerseite, GitHub Pages dagegen `404.html`).
 ## Produktbilder
 
 Die Bilder sind echte Bildschirmfotos der umbenannten Anwendung (Stand 20.10.2026, Worktree `warenwirtschaft-ordaneo`,
-Demo-Daten, Bildmarke A). Sie liegen als WebP in `assets/screens/<name>-hell-<breite>.webp`; `srcset`/`sizes` wählen
+Demo-Daten, Bildmarke A noch mit weißer Einheit – seit der Entscheidung für die orange Einheit am 20.10.2026 abends
+neu aufzunehmen, ebenso das Geräte-Bild und danach `og.png`). Sie liegen als WebP in `assets/screens/<name>-hell-<breite>.webp`; `srcset`/`sizes` wählen
 die Breite.
 
 | Datei | Ansicht | Aufnahme | Rahmen auf der Seite |
@@ -72,6 +73,20 @@ hier nichts installieren; Pillow mit WebP nötig):
 ```sh
 NODE_PATH=~/warenwirtschaft-ordaneo/node_modules node tools/render-geraete.cjs http://127.0.0.1:9370
 ```
+
+## Markendateien neu erzeugen
+
+Alle Dateien in `assets/brand` (SVG, PNG) und `favicon.ico` (16/32/48) entstehen aus `tools/build-brand.cjs`
+(Geometrie und Farben wie in `BRAND.md`; die Wortmarke wird aus `ordaneo-wordmark.svg` übernommen). Keine Vorschau
+nötig, Playwright wird geliehen:
+
+```sh
+NODE_PATH=~/warenwirtschaft-ordaneo/node_modules node tools/build-brand.cjs
+```
+
+Die Inline-Kopien der Bildmarke in den Seiten (Kopf und Fußzeile, Klassen `.logo-mark`, `.zf`, `.ze`) holen ihre
+Farben aus `assets/site.css` (`--marke-kachel`, `--marke-rahmen`, `--marke-einheit`); `tools/og.html` nennt sie
+direkt. Danach `og.png` neu rendern (unten) und die Dateien der Anwendung abgleichen (`BRAND.md` §11).
 
 ## Open-Graph-Bild neu rendern
 

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <style>
-    .k { fill: #15171b } .z { stroke: #f9fafb } .e { fill: #f9fafb }
-    @media (prefers-color-scheme: dark) { .k { fill: #f3f4f6 } .z { stroke: #0e1114 } .e { fill: #0e1114 } }
+    .k { fill: #15171b } .z { stroke: #f9fafb } .e { fill: #e8650e }
+    @media (prefers-color-scheme: dark) { .k { fill: #f3f4f6 } .z { stroke: #0e1114 } .e { fill: #c9530a } }
   </style>
   <rect class="k" width="32" height="32" rx="8"/>
   <path class="z" d="M14.5 23.5H13a4.5 4.5 0 0 1-4.5-4.5v-6A4.5 4.5 0 0 1 13 8.5h6a4.5 4.5 0 0 1 4.5 4.5v1.5" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>

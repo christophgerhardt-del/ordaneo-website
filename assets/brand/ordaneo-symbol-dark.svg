@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Ordaneo" color="#f9fafb">
+  <path d="M13.75 27.25H11.5a6.75 6.75 0 0 1-6.75-6.75v-9A6.75 6.75 0 0 1 11.5 4.75h9a6.75 6.75 0 0 1 6.75 6.75v2.25" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="19" y="19" width="10.5" height="10.5" rx="2.625" fill="#e8650e"/>
+</svg>
