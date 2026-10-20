@@ -1,32 +1,33 @@
 # ordaneo.de – Website
 
-Statische Produktseite für **Ordaneo**, die Warenwirtschaft für Handel und Großhandel. Reines HTML und CSS, kein
-Build-Schritt, kein JavaScript, keine externen Anfragen zur Laufzeit (keine CDN, keine Google Fonts, kein Tracking).
-Veröffentlicht werden soll sie über **GitHub Pages** unter **https://ordaneo.de**.
+Statische Produktseite für **Ordaneo**, die Warenwirtschaft für Handel und Großhandel. Gestaltet aus einer Hand mit
+presio.eu (gleicher Anbieter): Systemschrift, Navy und Blau, farbiger Hero mit schrägem Abschluss, Karten mit
+Symbol-Kacheln, abwechselnd weiße und helle Abschnitte; nur hell. Reines HTML und CSS ohne Build-Schritt, dazu ein
+kleines Skript für die Navigation (`assets/site.js`: fester Kopf beim Scrollen, Menü auf dem Telefon – speichert
+nichts, lädt nichts nach; ohne JavaScript bleibt alles nutzbar). Keine externen Anfragen zur Laufzeit (keine CDN,
+keine Webfonts, kein Tracking).
+Veröffentlicht über **GitHub Pages** unter **https://ordaneo.de** (Repository `christophgerhardt-del/ordaneo-website`).
 Die Anwendung selbst läuft unter `erp.ordaneo.de` (seit 20.10.2026; `warenwirtschaft.actuvo.de` bleibt daneben erreichbar).
 
-Stand: 20.10.2026 · **Noch nicht veröffentlicht** – offene Punkte unten.
+Stand: 20.10.2026 abends (Neugestaltung im Stil von presio.eu) – offene Punkte unten.
 
 ## Aufbau
 
 | Datei | Inhalt |
 |---|---|
-| `index.html` | Startseite: Hero, Ablauf (Belegkette), Funktionen, Zugriff und Betrieb, Branchen, Einführung, Kontakt |
+| `index.html` | Startseite: Hero mit Geräte-Bild, Zahlen, Funktionen (Karten), Ablauf (Belegkette), Lager, Touren, Kasse, Rechnung, Apps, Außerdem an Bord, Zugriff und Betrieb (dunkles Band), Branchen, Einführung, Häufige Fragen, Kontakt |
 | `impressum.html` | Gerüst mit markierten Platzhaltern (`<span class="ph">[… – Angabe folgt]</span>`) |
 | `datenschutz.html` | Entwurf für eine statische Seite ohne Cookies und Tracking, Hosting GitHub Pages |
 | `404.html` | Fehlerseite; GitHub Pages liefert sie unter jeder unbekannten Adresse aus, deshalb Pfade ab `/` |
-| `assets/site.css` | alle Stile, Farben als Variablen, hell und dunkel über `prefers-color-scheme` |
-| `assets/fonts/` | Inter (opsz + wght) und Geist Mono (wght) als WOFF2, Untermengen `latin` und `latin-ext`, mit Lizenz (SIL OFL 1.1) |
+| `assets/site.css` | alle Stile; Farben als Variablen nach der Palette von presio.eu (nur hell) |
+| `assets/site.js` | Navigation: fester Kopf ab dem Scrollen, Menü hinter dem Burger auf schmalen Bildschirmen |
 | `assets/brand/` | Marke: Bildmarke, Wortmarke, Lockup, Favicons, `BRAND.md` |
-| `assets/screens/` | Produktbilder als WebP, hell und dunkel, je zwei bis drei Breiten (siehe „Produktbilder“) |
+| `assets/screens/` | Produktbilder als WebP in zwei bis drei Breiten und das Geräte-Bild des Hero (siehe „Produktbilder“) |
 | `assets/og.png` | Vorschaubild für geteilte Links (1200 × 630), gerendert aus `tools/og.html` |
 | `favicon.ico`, `site.webmanifest` | Favicon (16/32/48, in Chrome aus `assets/brand/favicon.svg` gerendert) und Symbole für den Startbildschirm |
 | `robots.txt`, `sitemap.xml`, `CNAME` | Suchmaschinen und eigene Domain (`ordaneo.de`) |
 | `_config.yml` | sagt GitHub Pages, dass `README.md`, `tools/` und `BRAND.md` nicht veröffentlicht werden |
-| `tools/` | Vorlage und Skript für das Open-Graph-Bild (wird nicht veröffentlicht) |
-
-Schriften: Inter Variable `inter-latin-opsz-normal.woff2` usw. aus `@fontsource-variable/inter@5.3.0`, Geist Mono aus
-`@fontsource-variable/geist-mono@5.3.0` (per `npm pack` außerhalb des Projekts geladen, nichts installiert).
+| `tools/` | Vorlagen und Skripte für das Open-Graph-Bild und das Geräte-Bild (werden nicht veröffentlicht) |
 
 ## Lokale Vorschau
 
@@ -41,19 +42,19 @@ eigene Fehlerseite, GitHub Pages dagegen `404.html`).
 
 ## Produktbilder
 
-Die sechs Bilder auf der Startseite (`<figure data-shot="…">`) sind echte Bildschirmfotos der umbenannten Anwendung
-(Stand 20.10.2026, Worktree `warenwirtschaft-ordaneo`, Demo-Daten), je hell und dunkel. Sie liegen als WebP in
-`assets/screens/<name>-<hell|dunkel>-<breite>.webp`; ein `<picture>` wählt über `prefers-color-scheme` das passende
-Thema und über `srcset`/`sizes` die Breite.
+Die Bilder sind echte Bildschirmfotos der umbenannten Anwendung (Stand 20.10.2026, Worktree `warenwirtschaft-ordaneo`,
+Demo-Daten, Bildmarke A). Sie liegen als WebP in `assets/screens/<name>-hell-<breite>.webp`; `srcset`/`sizes` wählen
+die Breite.
 
-| `data-shot` | Datei | Ansicht | Aufnahme |
+| Datei | Ansicht | Aufnahme | Rahmen auf der Seite |
 |---|---|---|---|
-| `übersicht` | `uebersicht` | Start der Geschäftsführung (Johanna) | Desktop 1440 × 900, 2× |
-| `bestand` | `bestand` | Lager › MHD & Chargen, „Alle Chargen“, alle Standorte | Desktop 1440 × 900, 2× |
-| `tour` | `tour` | Verkauf › Disposition, Seitenleiste eingeklappt | Desktop 1440 × 900, 2× |
-| `kasse` | `kasse` | Kasse › Kassieren (Lea), Bon aus der Demo-Geschichte (49,13 €) | iPad quer 1180 × 820, 2× (Rahmen `shot--tablet`) |
-| `erechnung` | `erechnung` | Rechnung mit Karte „E-Rechnung“ (Claudia) | Desktop 1440 × 900, 2× |
-| `app` | `app` | Inventur › Zählen am Telefon (Petra) | Telefon 390 × 844, 3× (Rahmen `shot--phone`) |
+| `uebersicht` | Start der Geschäftsführung (Johanna) | Desktop 1440 × 900, 2× | im Geräte-Bild (Rechner) |
+| `bestand` | Lager › MHD & Chargen, „Alle Chargen“, alle Standorte | Desktop 1440 × 900, 2× | Browserfenster (`.bild-rahmen`) |
+| `tour` | Verkauf › Disposition, Seitenleiste eingeklappt | Desktop 1440 × 900, 2× | Browserfenster |
+| `kasse` | Kasse › Kassieren (Lea), Bon aus der Demo-Geschichte (49,13 €) | iPad quer 1180 × 820, 2× | Tablet (`.tablet-rahmen`) und Geräte-Bild |
+| `erechnung` | Rechnung mit Karte „E-Rechnung“ (Claudia) | Desktop 1440 × 900, 2× | Browserfenster |
+| `app` | Inventur › Zählen am Telefon (Petra) | Telefon 390 × 844, 3× | Telefon (`.handy-rahmen`) und Geräte-Bild |
+| `geraete` | Rechner, iPad und iPhone (wie auf presio.eu) | aus `tools/geraete.html`, 2000 × 1440, transparent | Hero |
 
 **Was an den Bildern bearbeitet ist:** Der Demo-Betrieb trägt in der Anwendung Namen, Logo, Standorte und
 Artikelnummern des Erstkunden. Für die Aufnahmen wurde deshalb nur in einer eigenen, danach gelöschten Datenbank
@@ -63,13 +64,18 @@ die Disposition wurde die nur geplante Tour 3 abgebrochen, damit planbare Auftr�
 (OpenStreetMap) sind weichgezeichnet, damit keine Ortsnamen den Standort des Erstkunden verraten. Sonst ist nichts
 retuschiert; die Hinweise „Demo-Daten“, „Schulungsbeleg (DEMO)“ und „DEMO – keine TSE“ sind echt und bleiben sichtbar.
 
-Neue Bilder: dieselben Ansichten in Chrome aufnehmen (Playwright, `colorScheme` hell und dunkel), wieder nur
-erfundene Daten und keinen Kundennamen zeigen, als WebP (Qualität etwa 82) in den Breiten 800, 1440 und 2400 (Telefon 564 und 846) ablegen und die
-Dateinamen im `<picture>` anpassen. Das erste Bild (`übersicht`) lädt ohne `loading="lazy"`.
+Neue Bilder: dieselben Ansichten in Chrome aufnehmen (Playwright, hell), wieder nur erfundene Daten und keinen
+Kundennamen zeigen, als WebP (Qualität etwa 82) in den Breiten 800, 1440 und 2400 (Kasse 2360, Telefon 564 und 846)
+ablegen. Danach das Geräte-Bild neu rendern (Vorschau muss laufen; Playwright aus einem vorhandenen Projekt leihen,
+hier nichts installieren; Pillow mit WebP nötig):
+
+```sh
+NODE_PATH=~/warenwirtschaft-ordaneo/node_modules node tools/render-geraete.cjs http://127.0.0.1:9370
+```
 
 ## Open-Graph-Bild neu rendern
 
-Bei geänderter Überschrift `tools/og.html` anpassen und mit Playwright in Google Chrome rendern (Vorschau muss laufen;
+Bei geänderter Überschrift oder neuem Geräte-Bild `tools/og.html` anpassen und mit Playwright in Google Chrome rendern (Vorschau muss laufen;
 Playwright wird aus einem vorhandenen Projekt geliehen, hier nichts installieren):
 
 ```sh
@@ -77,6 +83,9 @@ NODE_PATH=~/warenwirtschaft-ordaneo/node_modules node tools/render-og.cjs http:/
 ```
 
 ## Veröffentlichung über GitHub Pages
+
+Eingerichtet am 20.10.2026: öffentliches Repository `christophgerhardt-del/ordaneo-website`, Pages aus `main` (Root),
+eigene Domain `ordaneo.de`, HTTPS erzwungen. Ein Push auf `main` veröffentlicht. So war es eingerichtet:
 
 1. Repository anlegen (z. B. `ordaneo-website`), diesen Ordner als `main` pushen.
 2. Im Repository **Settings → Pages**: *Deploy from a branch*, Branch `main`, Ordner `/ (root)`.
@@ -115,7 +124,7 @@ Nürnberg, seit 20.10.2026 eingetragen und am Server eingerichtet). Ebenso bleib
 (SPF `-all`, DMARC `reject`) stehen, bis ein Postfach eingerichtet wird; dann ersetzen die MX-, SPF-, DKIM- und
 DMARC-Einträge des Mail-Anbieters diese Vorlage.
 
-## Offene Punkte vor der Veröffentlichung
+## Offene Punkte
 
 - **Impressum und Datenschutz:** Anbieter ist die Presio UG (haftungsbeschränkt) i. Gr., Hohenzollernstr. 7,
   80801 München (Angaben wie im Impressum von presio.eu). Noch offen: Vertretung (Geschäftsführung), Telefon,
@@ -135,5 +144,6 @@ Jede Funktionsaussage muss durch gebaute Funktionen gedeckt sein (Quellen: `docs
 19.10.2026). Nicht schreiben: „rechtssicher“, „zertifiziert“, „GoBD-konform“, „KassenSichV-konform“,
 „revisionssicher“, „DSGVO-konform“ oder ähnliche Gütesiegel; keine erfundenen Zahlen, Kunden, Referenzen, Zitate oder
 Preise; keinen Kundennamen. Die Kasse verkauft nur mit Verbindung zum Server – einen Betrieb ohne Verbindung nicht
-bewerben. „Server in Nürnberg“ beschreibt den heutigen Betrieb, ist kein Versprechen. Pro Ansicht höchstens eine
-Hauptaktion in Kupfer (siehe `assets/brand/BRAND.md`).
+bewerben. „Server in Nürnberg“ beschreibt den heutigen Betrieb, ist kein Versprechen. Ton wie auf presio.eu: kurze
+Sätze, Sie-Form, je Abschnitt eine Überschrift, die ohne den Rest verständlich ist. Farben nur aus der Palette in
+`assets/site.css` (siehe auch `assets/brand/BRAND.md`, Abschnitt Farben).

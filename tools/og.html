@@ -3,49 +3,41 @@
 <head>
 <meta charset="utf-8">
 <title>Ordaneo · Vorlage Open-Graph-Bild</title>
-<!-- Vorlage für assets/og.png (1200 × 630). Rendern: node tools/render-og.cjs (siehe README). -->
+<!-- Vorlage für assets/og.png (1200 × 630) im Stil der Website. Rendern: node tools/render-og.cjs (siehe README). -->
 <style>
-  @font-face { font-family: 'Inter Variable'; font-weight: 100 900; src: url(../assets/fonts/inter-latin-opsz-normal.woff2) format('woff2'); }
-  @font-face { font-family: 'Geist Mono Variable'; font-weight: 100 900; src: url(../assets/fonts/geist-mono-latin-wght-normal.woff2) format('woff2'); }
   html, body { margin: 0; }
   body {
-    width: 1200px; height: 630px; overflow: hidden; box-sizing: border-box;
-    background: #15171b; color: #f3f4f6; font-family: 'Inter Variable', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    display: flex; flex-direction: column; padding: 72px 80px 64px;
+    width: 1200px; height: 630px; overflow: hidden; position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased; color: #fff;
+    background:
+      radial-gradient(120% 140% at 85% 30%, #7B7FD6 0%, rgba(123, 127, 214, 0) 55%),
+      radial-gradient(90% 120% at 10% 110%, #1C46C9 0%, rgba(28, 70, 201, 0) 60%),
+      linear-gradient(120deg, #2559E6 0%, #4A63D8 45%, #6B74D1 100%);
   }
-  .lockup { height: 54px; width: 302.5px; display: block; align-self: flex-start; }
-  h1 {
-    margin: auto 0 0; font-size: 62px; line-height: 1.06; font-weight: 640; letter-spacing: -0.032em; max-width: 960px;
-  }
-  .terms { margin: 28px 0 0; font-size: 24px; line-height: 1.45; color: #b4bac4; max-width: 1000px; }
-  .terms span { white-space: nowrap; }
-  .foot {
-    margin-top: 44px; padding-top: 24px; border-top: 1px solid #2c3038;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .url { font-family: 'Geist Mono Variable', monospace; font-size: 24px; color: #ec955c; letter-spacing: 0; }
-  .tag { display: flex; align-items: center; gap: 12px; font-size: 20px; color: #b4bac4; }
-  .tag::before { content: ''; width: 12px; height: 12px; border-radius: 3px; background: #c0500c; }
+  .text { position: absolute; left: 72px; top: 64px; width: 500px; }
+  .logo { display: flex; align-items: center; gap: 16px; }
+  .mark { width: 58px; height: 58px; border-radius: 15px; background: rgba(255, 255, 255, 0.22); display: flex; align-items: center; justify-content: center; }
+  .mark svg { width: 36px; height: 36px; }
+  .wort { height: 28px; }
+  .eyebrow { margin-top: 66px; font-size: 17px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.9); }
+  h1 { margin: 16px 0 0; font-size: 66px; line-height: 1.06; font-weight: 750; letter-spacing: -0.025em; }
+  p { margin: 22px 0 0; font-size: 22px; line-height: 1.45; color: rgba(255, 255, 255, 0.92); }
+  .url { position: absolute; left: 72px; bottom: 54px; font-size: 22px; font-weight: 600; background: #fff; color: #0A2540; border-radius: 99px; padding: 10px 22px; }
+  .bild { position: absolute; left: 640px; top: 128px; width: 640px; }
 </style>
 </head>
 <body>
-  <svg class="lockup" viewBox="0 0 924.42 165" role="img" aria-label="Ordaneo" color="#f9fafb">
-    <g transform="translate(0 15) scale(4.6875)">
-      <rect width="32" height="32" rx="8" fill="#f3f4f6"/>
-      <path d="M14.5 23.5H13a4.5 4.5 0 0 1-4.5-4.5v-6A4.5 4.5 0 0 1 13 8.5h6a4.5 4.5 0 0 1 4.5 4.5v1.5" fill="none" stroke="#0e1114" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="18" y="18" width="7" height="7" rx="1.75" fill="#c0500c"/>
-    </g>
-    <g transform="translate(202.5 40)" fill="none" stroke="currentColor">
-      <path stroke-width="18" d="M607.13 50H514.42"/>
-      <path stroke-width="21" d="M10.5 50a41.5 41.5 0 1 0 83 0a41.5 41.5 0 1 0 -83 0M128.5 0V100M128.5 20.74A40 40 0 0 1 176.08 13.18M264.75 24.03A41.5 41.5 0 1 0 264.75 75.97M264.75 -40V100M373.62 24.03A41.5 41.5 0 1 0 373.62 75.97M373.62 0V100M410.62 0V100M410.62 20.74A40 40 0 0 1 479.42 48.5V100M596.79 57.18A41.5 41.5 0 1 0 586.76 77.77M628.42 50a41.5 41.5 0 1 0 83 0a41.5 41.5 0 1 0 -83 0"/>
-    </g>
-  </svg>
-  <h1>Die Warenwirtschaft für Handel mit Lager, Filialen und Auslieferung.</h1>
-  <p class="terms"><span>Bestand mit Charge und MHD ·</span> <span>Einkauf ·</span> <span>Aufträge ·</span> <span>Touren ·</span> <span>Pfand und Leergut ·</span> <span>E-Rechnung ·</span> <span>Kasse</span></p>
-  <div class="foot">
-    <span class="url">ordaneo.de</span>
-    <span class="tag">Warenwirtschaft für Handel und Großhandel</span>
+  <div class="text">
+    <div class="logo">
+      <span class="mark"><svg viewBox="6 6 20 20"><path d="M14.5 23.5H13a4.5 4.5 0 0 1-4.5-4.5v-6A4.5 4.5 0 0 1 13 8.5h6a4.5 4.5 0 0 1 4.5 4.5v1.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="18" y="18" width="7" height="7" rx="1.75" fill="#fff"/></svg></span>
+      <svg class="wort" viewBox="0 0 721.92 142"><g transform="translate(0 40)" fill="none" stroke="#fff"><path stroke-width="18" d="M607.13 50H514.42"/><path stroke-width="21" d="M10.5 50a41.5 41.5 0 1 0 83 0a41.5 41.5 0 1 0 -83 0M128.5 0V100M128.5 20.74A40 40 0 0 1 176.08 13.18M264.75 24.03A41.5 41.5 0 1 0 264.75 75.97M264.75 -40V100M373.62 24.03A41.5 41.5 0 1 0 373.62 75.97M373.62 0V100M410.62 0V100M410.62 20.74A40 40 0 0 1 479.42 48.5V100M596.79 57.18A41.5 41.5 0 1 0 586.76 77.77M628.42 50a41.5 41.5 0 1 0 83 0a41.5 41.5 0 1 0 -83 0"/></g></svg>
+    </div>
+    <div class="eyebrow">Warenwirtschaft · Handel und Großhandel</div>
+    <h1>Die ganze Ware.<br>Ein System.</h1>
+    <p>Lager, Einkauf, Aufträge, Touren, Pfand und Leergut, <span style="white-space:nowrap">E-Rechnung</span> und Kasse in einer Anwendung.</p>
   </div>
+  <span class="url">ordaneo.de</span>
+  <img class="bild" src="../assets/screens/geraete-1400.webp" alt="">
 </body>
 </html>

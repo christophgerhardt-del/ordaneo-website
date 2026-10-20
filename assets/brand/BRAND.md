@@ -5,7 +5,7 @@ Stand: 20.10.2026 · Version 1.1 (Bildmarke A „Eckstein“) · ersetzt den Arb
 Ordaneo ist eine mandantenfähige Warenwirtschaft für Lager, Filialen, Handel und Großhandel. Der Name kommt von
 *ordnen* bzw. lateinisch *ordo*, Ordnung und Reihe. Die Marke soll genau das ausstrahlen: ruhig, präzise,
 vertrauenswürdig. Sie bleibt wie die Anwendung bewusst farblos (Graphit und Hell); Farbe bringt in der Anwendung der
-Mandant mit, auf der Website eine einzige Akzentfarbe.
+Mandant mit. Die Website ist aus einer Hand mit presio.eu gestaltet und nutzt deren Palette (Abschnitt 6).
 
 ## 1 · Idee: „Eckstein“
 
@@ -110,34 +110,30 @@ Die Pfade sind Linienzüge (`stroke`). In Figma oder Illustrator lassen sie sich
 | Hell | `#f9fafb` (neutral-50) | Zeichen auf Graphit, Wortmarke dunkel, Seitengrund hell |
 | Kachel dunkel | `#f3f4f6` (neutral-100) | Kachel auf dunklem Grund (wie im dunklen Theme) |
 | Zeichen dunkel | `#0e1114` (neutral-950) | Rahmen und Einheit auf heller Kachel |
-| **Akzent Kupfer** | **`#C0500C`** | nur Website: Hauptaktion, Links auf hellem Grund, wahlweise die Einheit im Zeichen |
-| Kupfer hell | `#EC955C` | Links und kleine Akzentschrift auf dunklem Grund; Schaltfläche dunkel mit Graphit-Schrift |
-| Kupfer tief | `#A4430A` | Hover/gedrückt auf hellem Grund |
 
-### Akzentfarbe Kupfer
+### Website: Palette von presio.eu (seit 20.10.2026 abends)
 
-Warum Kupfer: ein warmer, ruhiger Gegenpol zu Graphit, klar unterscheidbar vom üblichen Software-Blau und von den
-Statusfarben der Anwendung (Fehler Rot bei Farbton 27, Warnung Bernstein bei 80; Kupfer liegt bei 45). Auf einem Beleg
-erinnert er an den Buchungsstempel: die Einheit in Kupfer heißt „erledigt“. In OKLCH: `oklch(0.569 0.159 44.5)`.
+Christoph hat entschieden, dass ordaneo.de so aussieht wie presio.eu (gleicher Anbieter). Die Website übernimmt deshalb
+deren Farben und Bausteine; Kupfer als Akzent entfällt. Die Werte stehen als Variablen in `assets/site.css`.
 
-Kontraste (WCAG 2.2, gerechnet):
-
-| Paar | Kontrast | Freigabe |
+| Rolle | Wert | Verwendung |
 |---|---|---|
-| Kupfer `#C0500C` auf Weiß | 4,78 : 1 | Text AA |
-| Kupfer auf Hell `#f9fafb` | 4,57 : 1 | Text AA |
-| Weiße Schrift auf Kupfer | 4,78 : 1 | Text AA (Schaltfläche) |
-| Kupfer auf Graphit `#15171b` | 3,75 : 1 | nur große Schrift, Flächen, Rahmen, Einheit (≥ 3 : 1) |
-| Kupfer hell `#EC955C` auf Graphit | 7,71 : 1 | Text AAA |
-| Graphit-Schrift auf Kupfer hell | 7,71 : 1 | Text AAA (Schaltfläche dunkel) |
-| Kupfer tief `#A4430A` auf Weiß | 6,20 : 1 | Text AA |
+| Navy | `#0A2540` | Überschriften, Schaltfläche dunkel, dunkles Band |
+| Fließtext | `#425466` | Text auf Weiß und Hellgrau (7,4 : 1 auf `#F6F9FC`) |
+| Leise | `#697386` | kleine Schrift, Bildunterschriften (4,78 : 1 auf Weiß, 4,52 : 1 auf `#F6F9FC`) |
+| Hellgrau | `#F6F9FC` | jeder zweite Abschnitt, Fußzeile |
+| Linie | `#E6EBF1` | Rahmen von Karten, Trennlinien |
+| **Blau** | **`#2563EB`** | Eyebrow-Labels, Symbole, Kachel der Bildmarke im festen Kopf und in der Fußzeile (5,17 : 1 auf Weiß) |
+| Blau tief | `#1E50C0` | Links, „Mehr erfahren“ (6,7 : 1 auf `#F6F9FC`) |
+| Violett, Bernstein, Grün, Rose, Petrol | `#7C3AED`, `#D97706`, `#16A34A`, `#E11D48`, `#0D9488` | nur Symbol-Kacheln und Häkchen-Kästchen, nie für Text |
+| Hero-Verlauf | `#2559E6` → `#4A63D8` → `#6B74D1` (mit zwei radialen Lichtern) | Hero der Startseite, Vorschaubild; Unterseiten mit dem Navy-Verlauf |
 
-Eine einzige Farbe kann nicht gleichzeitig auf Weiß und auf Graphit 4,5 : 1 erreichen. Deshalb: Kupfer ist die Farbe,
-Kupfer hell nur die Textstufe für dunkle Flächen.
+Auf dem Hero steht die Bildmarke als **weißes Zeichen auf durchscheinender weißer Kachel** (`rgba(255,255,255,0.22)`),
+im festen Kopf und in der Fußzeile als weißes Zeichen auf **blauer Kachel**, daneben die Wortmarke in Weiß bzw. Navy.
+Weiße Schrift steht auf dem Hero nur im linken, dunkleren Teil (mindestens 5,2 : 1).
 
-Regeln: pro Ansicht höchstens eine Hauptaktion in Kupfer; keine Verläufe, keine Kupferflächen hinter Text, nie für
-Statusmeldungen. In der Anwendung gibt es kein Kupfer: dort bleibt Graphit der Standard und die Hausfarbe des Mandanten
-die einzige Farbe.
+In der Anwendung gibt es weder Kupfer noch die Website-Palette: Dort bleibt Graphit der Standard und die Hausfarbe des
+Mandanten die einzige Farbe.
 
 ## 7 · Schutzraum und Mindestgrößen
 
@@ -164,15 +160,12 @@ oder mit großem O.
 
 ## 9 · Schrift für die Website
 
-**Inter** (Rasmus Andersson, SIL Open Font License 1.1) für alle Texte und **Geist Mono** (Vercel, SIL OFL 1.1) für
-Artikelnummern, EAN und Code. Beide nutzt auch die Anwendung, Website und Produkt sehen damit gleich aus.
+Seit der Neugestaltung im Stil von presio.eu (20.10.2026) nutzt die Website die **Systemschrift** des Geräts
+(`-apple-system`, SF Pro, Segoe UI, Roboto …) und lädt keine Schriftdateien. Überschriften 720–750, Laufweite −0,02 em;
+Fließtext 400, Zeilenhöhe 1,6; Belegkürzel und Code in der Monospace-Schrift des Systems.
 
-- Selbst gehostet als variable WOFF2 (Pakete `@fontsource-variable/inter` und `@fontsource-variable/geist-mono` oder
-  die Dateien aus den offiziellen Releases), keine Einbindung über Google Fonts. Untermengen `latin` und `latin-ext`
-  genügen; `font-display: swap`, die Datei für Fließtext per `<link rel="preload">` vorladen.
-- Inter Variable mit Achse `opsz`: Überschriften bekommen automatisch die Display-Schnitte. Überschriften 600–650,
-  Laufweite −0,02 em; Fließtext 400, 17–18 px, Zeilenhöhe 1,55; Zahlen in Tabellen mit `font-variant-numeric: tabular-nums`.
-- Die Wortmarke ist keine Schrift und wird nie mit Inter nachgesetzt.
+Die Anwendung nutzt weiter Inter und Geist Mono (SIL Open Font License 1.1). Die Wortmarke ist keine Schrift und wird
+nie mit einer Schrift nachgesetzt.
 
 ## 10 · Dateien
 
