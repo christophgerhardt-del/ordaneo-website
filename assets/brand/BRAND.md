@@ -113,8 +113,9 @@ Die Pfade sind Linienzüge (`stroke`). In Figma oder Illustrator lassen sie sich
 
 ### Website: Palette von presio.eu (seit 20.10.2026 abends)
 
-Christoph hat entschieden, dass ordaneo.de so aussieht wie presio.eu (gleicher Anbieter). Die Website übernimmt deshalb
-deren Farben und Bausteine; Kupfer als Akzent entfällt. Die Werte stehen als Variablen in `assets/site.css`.
+Christoph hat entschieden, dass ordaneo.de so professionell aufgebaut ist wie presio.eu (gleicher Anbieter): Bausteine
+und Typografie wie dort, aber eigene Farben – Variante A „Petrol“ (Entscheidung 20.10.2026). Kupfer als Akzent entfällt.
+Die Werte stehen als Variablen in `assets/site.css`.
 
 | Rolle | Wert | Verwendung |
 |---|---|---|
@@ -123,13 +124,13 @@ deren Farben und Bausteine; Kupfer als Akzent entfällt. Die Werte stehen als Va
 | Leise | `#697386` | kleine Schrift, Bildunterschriften (4,78 : 1 auf Weiß, 4,52 : 1 auf `#F6F9FC`) |
 | Hellgrau | `#F6F9FC` | jeder zweite Abschnitt, Fußzeile |
 | Linie | `#E6EBF1` | Rahmen von Karten, Trennlinien |
-| **Blau** | **`#2563EB`** | Eyebrow-Labels, Symbole, Kachel der Bildmarke im festen Kopf und in der Fußzeile (5,17 : 1 auf Weiß) |
-| Blau tief | `#1E50C0` | Links, „Mehr erfahren“ (6,7 : 1 auf `#F6F9FC`) |
+| **Petrol** | **`#0E7490`** | Eyebrow-Labels, Symbole, Kachel der Bildmarke im festen Kopf und in der Fußzeile (5,36 : 1 auf Weiß) |
+| Petrol tief | `#155E75` | Links, „Mehr erfahren“, Hover (7,0 : 1 auf `#F6F9FC`) |
 | Violett, Bernstein, Grün, Rose, Petrol | `#7C3AED`, `#D97706`, `#16A34A`, `#E11D48`, `#0D9488` | nur Symbol-Kacheln und Häkchen-Kästchen, nie für Text |
-| Hero-Verlauf | `#2559E6` → `#4A63D8` → `#6B74D1` (mit zwei radialen Lichtern) | Hero der Startseite, Vorschaubild; Unterseiten mit dem Navy-Verlauf |
+| Hero-Verlauf | `#0A4D5C` → `#0E7490` → `#14918F` (Lichter `#1BA3A0`, `#073B48`) | Hero der Startseite, Vorschaubild, Kontakt-Band; Unterseiten mit dem dunklen Petrol-Verlauf `#06313B` → `#0E7490` |
 
 Auf dem Hero steht die Bildmarke als **weißes Zeichen auf durchscheinender weißer Kachel** (`rgba(255,255,255,0.22)`),
-im festen Kopf und in der Fußzeile als weißes Zeichen auf **blauer Kachel**, daneben die Wortmarke in Weiß bzw. Navy.
+im festen Kopf und in der Fußzeile als weißes Zeichen auf **Petrol-Kachel**, daneben die Wortmarke in Weiß bzw. Navy.
 Weiße Schrift steht auf dem Hero nur im linken, dunkleren Teil (mindestens 5,2 : 1).
 
 In der Anwendung gibt es weder Kupfer noch die Website-Palette: Dort bleibt Graphit der Standard und die Hausfarbe des

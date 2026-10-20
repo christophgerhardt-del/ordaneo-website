@@ -9,8 +9,8 @@
   --bg: #FFFFFF;
   --soft: #F6F9FC;
   --line: #E6EBF1;
-  --blue: #2563EB;
-  --blue-dark: #1E50C0;
+  --blue: #0E7490;       /* Petrol – Hauptfarbe (5,36 : 1 auf Weiß) */
+  --blue-dark: #155E75;  /* Petrol tief – Hover, Text auf --soft */
   --violet: #7C3AED;
   --amber: #D97706;
   --gruen: #16A34A;
@@ -124,18 +124,18 @@ body.menue-offen .mobil-menue { opacity: 1; pointer-events: auto; transform: non
   position: absolute; inset: 0;
   clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
   background:
-    linear-gradient(180deg, rgba(10, 37, 64, 0.22) 0, rgba(10, 37, 64, 0) 150px),
-    radial-gradient(120% 140% at 85% 30%, #7B7FD6 0%, rgba(123, 127, 214, 0) 55%),
-    radial-gradient(90% 120% at 10% 110%, #1C46C9 0%, rgba(28, 70, 201, 0) 60%),
-    linear-gradient(120deg, #2559E6 0%, #4A63D8 45%, #6B74D1 100%);
+    linear-gradient(180deg, rgba(4, 30, 38, 0.25) 0, rgba(4, 30, 38, 0) 150px),
+    radial-gradient(120% 140% at 85% 30%, #1BA3A0 0%, rgba(27, 163, 160, 0) 55%),
+    radial-gradient(90% 120% at 10% 110%, #073B48 0%, rgba(7, 59, 72, 0) 60%),
+    linear-gradient(120deg, #0A4D5C 0%, #0E7490 50%, #14918F 100%);
 }
 .hero-farbe.thema-navy {
   clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%);
   background:
-    radial-gradient(60% 90% at 15% 25%, #1E3A8A 0%, transparent 62%),
-    radial-gradient(50% 80% at 80% 10%, #2563EB 0%, transparent 60%),
-    radial-gradient(45% 75% at 90% 70%, #0EA5E9 0%, transparent 58%),
-    linear-gradient(160deg, #0A2540 0%, #1E3A8A 60%, #1E50C0 100%);
+    radial-gradient(60% 90% at 15% 25%, #0A4D5C 0%, transparent 62%),
+    radial-gradient(50% 80% at 80% 10%, #0E7490 0%, transparent 60%),
+    radial-gradient(45% 75% at 90% 70%, #14918F 0%, transparent 58%),
+    linear-gradient(160deg, #06313B 0%, #0A4D5C 60%, #0E7490 100%);
 }
 .hero-inhalt { position: relative; padding: 132px 24px 96px; min-height: 620px; }
 .hero-band.schmal .hero-inhalt { min-height: 0; padding-bottom: 92px; }
@@ -157,7 +157,7 @@ body.menue-offen .mobil-menue { opacity: 1; pointer-events: auto; transform: non
   width: calc(100% + clamp(10px, (100vw - 1032px) / 2 - 10px, 150px)); max-width: none; height: auto; }
 @media (max-width: 1180px) and (min-width: 901px) { .hero-grid { gap: 24px; } }
 @media (max-width: 900px) {
-  .hero-farbe { background: linear-gradient(160deg, #2B5BE4 0%, #3F5FDB 55%, #6B74D1 100%); clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); }
+  .hero-farbe { background: linear-gradient(160deg, #0A4D5C 0%, #0E7490 55%, #14918F 100%); clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); }
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .hero-inhalt { min-height: 0; padding: 112px 24px 44px; }
   .hero-geraete-bild { margin: 30px -10px 0; }
@@ -204,7 +204,7 @@ a.karte .mehr::after { content: " →"; }
 
 /* Belegkette */
 .kette { list-style: none; padding: 0; margin: 44px 0 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px; counter-reset: k; position: relative; }
-.kette::before { content: ""; position: absolute; left: 4%; right: 4%; top: 19px; height: 2px; background: linear-gradient(90deg, var(--blue), var(--violet)); opacity: 0.35; }
+.kette::before { content: ""; position: absolute; left: 4%; right: 4%; top: 19px; height: 2px; background: linear-gradient(90deg, var(--blue), var(--teal)); opacity: 0.35; }
 .kette li { position: relative; }
 .beleg { display: inline-flex; align-items: center; justify-content: center; min-width: 50px; height: 40px; padding: 0 10px; border-radius: 10px;
   background: #fff; border: 1px solid var(--line); box-shadow: var(--schatten-karte); color: var(--blue-dark);
@@ -321,7 +321,7 @@ figcaption { margin-top: 14px; font-size: 0.86rem; color: var(--faint); text-ali
 
 /* Abschluss-Band */
 .cta-band { position: relative; overflow: hidden; border-radius: 16px; padding: 56px 40px; text-align: center;
-  background: linear-gradient(120deg, #1E50C0 0%, #4A47D8 55%, #6D28D9 100%); }
+  background: linear-gradient(120deg, #0A4D5C 0%, #0E7490 55%, #0F766E 100%); }
 .cta-band h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); max-width: none; margin: 0 auto; }
 .cta-band p { color: rgba(255, 255, 255, 0.92); margin: 12px auto 26px; max-width: 54ch; }
 .cta-band .knoepfe { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
