@@ -125,10 +125,9 @@ DMARC-Einträge des Mail-Anbieters diese Vorlage.
   laufen E-Mail-Links ins Leere.
 - **`erp.ordaneo.de`** ist seit 20.10.2026 eingerichtet (DNS, Server, Zertifikat); alle „Demo ansehen“-Knöpfe zeigen
   dorthin. Den neuen Namen zeigt die Anwendung erst, wenn der Umbenennungs-Zweig ausgeliefert ist.
-- **Die Demo zeigt heute Namen und Logo des Erstkunden** und noch den alten Namen der Anwendung. Bevor die Website auf
-  die Demo verlinkt, klären, ob das so öffentlich sein darf (sonst einen neutralen Beispielbetrieb voranstellen).
-- **Produktbilder** zeigen einen umbenannten Demo-Betrieb (siehe „Produktbilder“). Die öffentliche Demo sieht anders aus,
-  solange sie den Erstkunden zeigt – beim Umstellen der Demo die Bilder bei Bedarf neu aufnehmen.
+- **Öffentliche Demo:** Unter „Demo-Zugänge“ stehen nur erfundene Betriebe (gilt ab der Auslieferung vom 20.10.2026).
+- **Produktbilder** zeigen einen erfundenen Getränkehandel und in der Seitenleiste noch die frühere Bildmarke – neu
+  aufnehmen (siehe „Produktbilder“).
 - Hinweis zu den Apps („Veröffentlichung in den App-Stores folgt“) anpassen, sobald sie in den Stores sind.
 
 ## Regeln für Texte
