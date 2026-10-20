@@ -127,7 +127,7 @@ DMARC-Einträge des Mail-Anbieters diese Vorlage.
 ## Offene Punkte
 
 - **Impressum und Datenschutz:** Anbieter ist die Presio UG (haftungsbeschränkt) i. Gr., Hohenzollernstr. 7,
-  80801 München (Angaben wie im Impressum von presio.eu). Noch offen: Vertretung (Geschäftsführung), Telefon,
+  80801 München (Angaben wie im Impressum von presio.eu). Vertretung und Verantwortlicher nach MStV wie im Impressum von presio.eu (Christoph Gerhardt). Noch offen: Telefon,
   Aufsichtsbehörde, Postfach-Anbieter, Grundlage der Übermittlung an GitHub; alles rechtlich prüfen lassen;
   dann die Hinweise „Entwurf – vor Veröffentlichung prüfen“ entfernen.
 - **Postfach `kontakt@ordaneo.de` muss noch eingerichtet werden** (MX und SPF/DKIM/DMARC bei Squarespace). Bis dahin
