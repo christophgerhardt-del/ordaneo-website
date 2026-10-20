@@ -11,9 +11,10 @@
 .hero-band.unterseite.ohne-bild .hero-inhalt { padding-bottom: 92px; }
 .hero-band.unterseite h1 { font-size: clamp(2rem, 4.2vw, 2.85rem); }
 .hero-band.unterseite .hero-sub { max-width: 52ch; }
-/* dunkle Glas-Fläche wie auf der Startseite – die helle erreichte am Telefon über dem hellen Teil des Verlaufs nur 3,4 : 1 */
-.hero-band.unterseite a.btn.glas { background: rgba(10, 37, 64, 0.32); }
-.hero-band.unterseite a.btn.glas:hover { background: rgba(10, 37, 64, 0.45); }
+/* dunkle Glas-Fläche – die helle erreichte am Telefon über dem hellen Teil des Verlaufs nur 3,4 : 1; mit 0,40 Deckkraft
+   (etwas mehr als auf der Startseite) liegt auch der hellste Punkt bei 390 px über 4,5 : 1 */
+.hero-band.unterseite a.btn.glas { background: rgba(10, 37, 64, 0.4); }
+.hero-band.unterseite a.btn.glas:hover { background: rgba(10, 37, 64, 0.52); }
 .hero-krumen { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .hero-krumen [aria-current] { color: rgba(255, 255, 255, 0.88); }
 .hero-bild { margin: 0; min-width: 0; }
