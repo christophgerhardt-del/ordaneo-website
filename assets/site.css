@@ -1,10 +1,12 @@
 /* Ordaneo – Website. Gestaltung aus einer Hand mit presio.eu (gleicher Anbieter): Systemschrift, Navy und Blau,
    farbiger Hero mit schrägem Abschluss, Karten mit Symbol-Kacheln, abwechselnd weiße und helle Abschnitte.
-   Nur hell. Keine Schrift- oder Bilddateien von fremden Servern. */
+   Nur hell. Keine Schrift- oder Bilddateien von fremden Servern.
+   EINGEFROREN seit 21.10.2026 (zusammen mit assets/seiten.css und assets/site.js): Seiten-Agenten ändern diese
+   Dateien nicht, sondern bauen nur aus den vorhandenen Klassen – Anleitung in plan/VORLAGE.md. */
 :root {
   --navy: #0A2540;
   --body: #425466;
-  --faint: #697386;      /* kleine Schrift: 4,78 : 1 auf Weiß, 4,52 : 1 auf --soft */
+  --faint: #5f6b7d;      /* kleine Schrift: 5,4 : 1 auf Weiß, 5,1 : 1 auf --soft (auch im Schatten der Bildrahmen über 4,5 : 1) */
   --zart: #8898AA;       /* nur Linien und Symbole, nie für Text */
   --bg: #FFFFFF;
   --soft: #F6F9FC;
@@ -17,6 +19,11 @@
   --gruen-text: #166534;
   --rose: #E11D48;
   --teal: #0D9488;
+  --petrol-hell: #EDF6F8;  /* Fläche „Das ist besonders“ */
+  --petrol-linie: #CBE4E9;
+  --hinweis-flaeche: #FEF3E2; /* Stand- und Entwurfshinweise */
+  --hinweis-linie: #FBDBA7;
+  --hinweis-text: #7A3E06;  /* 8,3 : 1 auf --hinweis-flaeche */
   /* Bildmarke (BRAND.md §3/§6): Graphit-Kachel, heller Rahmen, orange Einheit – überall gleich. Das Orange gehört
      nur der Einheit der Marke, nie Text, Flächen oder Schaltflächen der Website. */
   --marke-kachel: #15171B;
@@ -70,7 +77,7 @@ a.btn.glas { background: rgba(10, 37, 64, 0.32); color: #fff; }
 a.btn.glas:hover { background: rgba(10, 37, 64, 0.45); }
 a.leise { color: var(--blue-dark); font-weight: 600; text-decoration: none; font-size: 15px; }
 a.leise:hover { text-decoration: underline; }
-a.leise::after { content: " →"; }
+a.leise::after { content: "\00a0→"; }
 @media (prefers-reduced-motion: reduce) { a.btn:hover { transform: none; } }
 
 /* ── Navigation ── */
@@ -82,7 +89,7 @@ nav.top.fest, body.menue-offen nav.top {
   backdrop-filter: blur(14px) saturate(160%);
   box-shadow: 0 1px 0 var(--line), 0 6px 20px -12px rgba(10, 37, 64, 0.25);
 }
-.nav-inner { display: flex; align-items: center; gap: 24px; height: 64px; }
+.nav-inner { display: flex; align-items: center; gap: 24px; height: 64px; position: relative; }
 .logo { display: inline-flex; align-items: center; gap: 11px; color: #fff; text-decoration: none; transition: color 0.25s ease; flex: none; }
 .logo-mark { width: 36px; height: 36px; border-radius: 9px; background: var(--marke-kachel); display: flex; align-items: center; justify-content: center; flex: none; }
 .logo-mark svg { width: 22px; height: 22px; }
@@ -90,15 +97,60 @@ nav.top.fest, body.menue-offen nav.top {
 .logo-mark .ze { fill: var(--marke-einheit); }
 .logo .wort { height: 17px; width: auto; display: block; margin-top: 1px; }
 nav.top.fest .logo, nav.top.dunkel-text .logo, body.menue-offen .logo { color: var(--navy); }
-.nav-links { display: flex; gap: 4px; margin-left: auto; align-items: center; }
-.nav-links > a {
-  color: #fff; text-decoration: none; font-size: 15px; font-weight: 500;
-  padding: 7px 12px; border-radius: 8px; transition: color 0.25s ease, background 0.2s ease;
+.nav-links { display: flex; gap: 2px; margin-left: auto; align-items: center; }
+.nav-links > a, .hat-menue > .hat-knopf, .hat-menue > .hat-pfeil {
+  color: #fff; text-decoration: none; font-size: 15px; font-weight: 500; font-family: inherit; line-height: 22px;
+  padding: 7px 12px; border: 0; border-radius: 8px; background: none; cursor: pointer;
+  transition: color 0.25s ease, background 0.2s ease;
 }
-.nav-links > a:hover { color: #fff; background: rgba(255, 255, 255, 0.12); }
-nav.top.fest .nav-links > a, nav.top.dunkel-text .nav-links > a { color: var(--body); }
-nav.top.fest .nav-links > a:hover, nav.top.dunkel-text .nav-links > a:hover { color: var(--navy); background: var(--soft); }
+.nav-links > a:hover, .hat-menue > .hat-knopf:hover, .hat-menue > .hat-pfeil:hover { color: #fff; background: rgba(255, 255, 255, 0.12); }
+nav.top.fest .nav-links > a, nav.top.dunkel-text .nav-links > a,
+nav.top.fest .hat-menue > .hat-knopf, nav.top.dunkel-text .hat-menue > .hat-knopf,
+nav.top.fest .hat-menue > .hat-pfeil, nav.top.dunkel-text .hat-menue > .hat-pfeil { color: var(--body); }
+nav.top.fest .nav-links > a:hover, nav.top.dunkel-text .nav-links > a:hover,
+nav.top.fest .hat-menue > .hat-knopf:hover, nav.top.dunkel-text .hat-menue > .hat-knopf:hover,
+nav.top.fest .hat-menue > .hat-pfeil:hover, nav.top.dunkel-text .hat-menue > .hat-pfeil:hover { color: var(--navy); background: var(--soft); }
+.nav-links > a[aria-current="page"], .hat-menue.aktiv > .hat-knopf { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 7px; }
 .nav-inner > a.btn { flex: none; }
+
+/* Ausklappmenüs „Funktionen“ (groß, vier Gruppen) und „Branchen“ (klein) – wie das Flyout auf presio.eu.
+   site.js öffnet per Hover und per Pfeil-Knopf; ohne JavaScript öffnen Hover und Tastaturfokus (unten). */
+.hat-menue { position: relative; display: flex; align-items: center; }
+.hat-menue.mega { position: static; }
+.hat-menue > .hat-knopf { padding-right: 3px; }
+.hat-menue > .hat-pfeil { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 36px; padding: 0 10px 0 4px; }
+.hat-pfeil::after { content: ""; width: 7px; height: 7px; border-right: 1.6px solid currentColor; border-bottom: 1.6px solid currentColor;
+  margin-top: -4px; transform: rotate(45deg); transition: transform 0.2s ease, margin 0.2s ease; }
+.hat-menue.offen > .hat-pfeil::after { margin-top: 4px; transform: rotate(225deg); }
+.flyout {
+  position: absolute; top: calc(100% + 8px); left: 50%; z-index: 60; width: 330px;
+  background: #fff; border-radius: 14px; padding: 10px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.28), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--line);
+  opacity: 0; visibility: hidden; pointer-events: none; transform: translate(-50%, 6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+}
+.flyout.gross { left: 24px; right: 24px; width: auto; top: calc(100% - 4px); transform: translateY(6px);
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 6px; padding: 18px 14px 10px; }
+.hat-menue.offen > .flyout,
+html:not(.js) .hat-menue:hover > .flyout, html:not(.js) .hat-menue:focus-within > .flyout {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); transition-delay: 0s;
+}
+.hat-menue.offen > .flyout.gross,
+html:not(.js) .hat-menue:hover > .flyout.gross, html:not(.js) .hat-menue:focus-within > .flyout.gross { transform: none; }
+@media (prefers-reduced-motion: reduce) { .flyout { transition: none; } }
+.flyout-titel { margin: 0; padding: 2px 10px 6px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); }
+.flyout a { display: flex; gap: 11px; align-items: flex-start; padding: 9px 10px; border-radius: 10px; text-decoration: none; color: var(--body); }
+.flyout a:hover, .flyout a[aria-current="page"] { background: var(--soft); }
+.flyout .fi { flex: none; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; margin-top: 1px; }
+.flyout .fi svg { width: 17px; height: 17px; }
+.flyout b { display: block; color: var(--navy); font-size: 0.9rem; line-height: 1.35; letter-spacing: -0.01em; }
+.flyout .zeile { display: block; font-size: 0.79rem; line-height: 1.4; color: var(--faint); margin-top: 2px; }
+.flyout-fuss { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px;
+  margin-top: 8px; padding: 12px 10px 4px; border-top: 1px solid var(--line); font-size: 0.86rem; color: var(--faint); }
+.flyout .flyout-fuss a { display: inline; padding: 0; border-radius: 4px; color: var(--blue-dark); font-weight: 600; font-size: 0.9rem; }
+.flyout .flyout-fuss a::after { content: "\00a0→"; }
+.flyout .flyout-fuss a:hover { background: none; text-decoration: underline; }
+.flyout:not(.gross) .flyout-fuss { margin-top: 6px; }
 nav.top.fest .nav-inner > a.btn.hell, nav.top.dunkel-text .nav-inner > a.btn.hell { background: var(--navy); color: #fff; }
 .burger { display: none; margin-left: auto; background: none; border: 0; cursor: pointer; padding: 10px; }
 .burger span { display: block; width: 22px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; transition: all 0.25s ease; }
@@ -115,7 +167,25 @@ body.menue-offen .mobil-menue { opacity: 1; pointer-events: auto; transform: non
 .mobil-menue a { display: flex; gap: 12px; align-items: center; padding: 11px 0; text-decoration: none; color: var(--navy); font-weight: 600; font-size: 1.05rem; border-bottom: 1px solid var(--line); }
 .mobil-menue a.btn { margin-top: 22px; border: 0; justify-content: center; color: #fff; }
 .mobil-menue .fi { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex: none; color: #fff; }
-@media (max-width: 860px) {
+.mobil-menue details { border-bottom: 1px solid var(--line); }
+.mobil-menue summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 13px 0; color: var(--navy); font-weight: 600; font-size: 1.05rem; }
+.mobil-menue summary::-webkit-details-marker { display: none; }
+.mobil-menue summary::after { content: ""; width: 8px; height: 8px; margin: -4px 6px 0 0; border-right: 2px solid var(--faint); border-bottom: 2px solid var(--faint);
+  transform: rotate(45deg); transition: transform 0.2s ease; }
+.mobil-menue details[open] > summary::after { transform: rotate(225deg); margin-top: 4px; }
+.mobil-menue details > div { padding: 0 0 14px; }
+.mobil-menue details a { border-bottom: 0; padding: 7px 0; font-size: 0.98rem; font-weight: 550; }
+.mobil-menue details .fi { width: 28px; height: 28px; border-radius: 7px; }
+.mobil-menue details .fi svg { width: 15px; height: 15px; }
+.mobil-menue .mm-titel { margin: 12px 0 2px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); }
+.mobil-menue details a.mm-alle { color: var(--blue-dark); font-weight: 600; }
+.mobil-menue details a.mm-alle::after { content: "\00a0→"; }
+.mobil-menue a[aria-current="page"] { color: var(--blue-dark); }
+.flyout a:focus-visible, .mobil-menue a:focus-visible, .mobil-menue summary:focus-visible { outline-color: var(--blue); }
+nav.top:not(.fest) .hat-pfeil:focus-visible, nav.top:not(.fest) .burger:focus-visible { outline-color: #fff; }
+body.menue-offen nav.top .burger:focus-visible { outline-color: var(--blue); }
+@media (max-width: 980px) {
   .nav-links { display: none; }
   html.js .burger { display: block; }
   html.js .nav-inner > a.btn { display: none; }
@@ -150,7 +220,7 @@ body.menue-offen .mobil-menue { opacity: 1; pointer-events: auto; transform: non
 .hero-band.schmal a.btn.glas:hover { background: rgba(255, 255, 255, 0.24); }
 .hero-inhalt .eyebrow { color: rgba(255, 255, 255, 0.9); }
 .hero-inhalt h1 { color: #fff; font-size: clamp(2.2rem, 5.2vw, 3.4rem); font-weight: 750; }
-.hero-sub { color: rgba(255, 255, 255, 0.95); font-size: 1.13rem; max-width: 46ch; margin-top: 18px; }
+.hero-sub { color: #fff; font-size: 1.13rem; max-width: 46ch; margin-top: 18px; }
 .hero-ctas { display: flex; gap: 14px; align-items: center; margin-top: 28px; flex-wrap: wrap; }
 .hero-ctas .hinweis { color: rgba(255, 255, 255, 0.95); font-size: 0.86rem; width: 100%; }
 .hero-krumen { position: absolute; top: 78px; left: 24px; right: 24px; color: rgba(255, 255, 255, 0.88); font-size: 0.85rem; }
@@ -202,7 +272,7 @@ a.karte:hover { transform: translateY(-3px); box-shadow: var(--schatten-schwebe)
 .karte h3 { font-size: 1.08rem; margin-bottom: 8px; }
 .karte p { font-size: 0.95rem; }
 .karte .mehr { display: inline-block; margin-top: 14px; color: var(--blue-dark); font-weight: 600; font-size: 0.9rem; }
-a.karte .mehr::after { content: " →"; }
+a.karte .mehr::after { content: "\00a0→"; }
 .bg-blau { background: var(--blue); } .bg-violett { background: var(--violet); } .bg-amber { background: var(--amber); }
 .bg-gruen { background: var(--gruen); } .bg-rose { background: var(--rose); } .bg-teal { background: var(--teal); } .bg-navy { background: var(--navy); }
 
@@ -277,6 +347,8 @@ figcaption { margin-top: 14px; font-size: 0.86rem; color: var(--faint); text-ali
 .band-grid h3 { color: #fff; font-size: 1rem; margin-bottom: 7px; display: flex; align-items: center; gap: 10px; }
 .band-grid h3 svg { flex: none; color: #7FA6F5; }
 .band-grid p { font-size: 0.93rem; }
+.band a.leise { color: #fff; }
+.band .band-links { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 38px; }
 
 /* Branchenprofile */
 .profile { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 42px; }
@@ -341,9 +413,13 @@ figcaption { margin-top: 14px; font-size: 0.86rem; color: var(--faint); text-ali
 
 /* Fußzeile */
 footer.gross { background: var(--soft); border-top: 1px solid var(--line); padding: 56px 0 40px; font-size: 0.88rem; }
-.fuss-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 32px; }
-@media (max-width: 860px) { .fuss-grid { grid-template-columns: 1fr 1fr; } .fuss-marke { grid-column: 1 / -1; } }
+.fuss-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+@media (max-width: 860px) { .fuss-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .fuss-marke, .fuss-funktionen { grid-column: 1 / -1; } }
+.fuss-zwei { columns: 2; column-gap: 28px; }
+.fuss-zwei a { break-inside: avoid; }
 footer.gross h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--faint); margin-bottom: 12px; }
+footer.gross h4.weiter { margin-top: 24px; }
+footer.gross a[aria-current="page"] { color: var(--navy); font-weight: 600; }
 footer.gross a { display: block; color: var(--body); text-decoration: none; padding: 4px 0; }
 footer.gross a:hover { color: var(--navy); }
 footer.gross a.logo { display: inline-flex; padding: 0; color: var(--navy); }

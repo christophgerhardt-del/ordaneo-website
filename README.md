@@ -9,25 +9,34 @@ keine Webfonts, kein Tracking).
 Veröffentlicht über **GitHub Pages** unter **https://ordaneo.de** (Repository `christophgerhardt-del/ordaneo-website`).
 Die Anwendung selbst läuft unter `erp.ordaneo.de` (seit 20.10.2026; `warenwirtschaft.actuvo.de` bleibt daneben erreichbar).
 
-Stand: 20.10.2026 abends (Neugestaltung im Stil von presio.eu) – offene Punkte unten.
+Stand: Nacht 20./21.10.2026 – 27 Seiten: Startseite, Funktionsübersicht, 16 Funktionsseiten, Branchen (Übersicht,
+Getränkehandel, Fachhandel), Sicherheit, Einführung, Fragen, Impressum, Datenschutz, 404. Offene Punkte unten.
 
 ## Aufbau
 
 | Datei | Inhalt |
 |---|---|
-| `index.html` | Startseite: Hero mit Geräte-Bild, Zahlen, Funktionen (Karten), Ablauf (Belegkette), Lager, Touren, Kasse, Rechnung, Apps, Außerdem an Bord, Zugriff und Betrieb (dunkles Band), Branchen, Einführung, Häufige Fragen, Kontakt |
+| `index.html` | Startseite: Hero mit Geräte-Bild, Zahlen, Funktionen (Karten → Funktionsseiten), Was Ordaneo besonders macht, Ablauf (Belegkette), Lager, Touren, Kasse, Rechnung, Apps, Außerdem an Bord, Zugriff und Betrieb (dunkles Band), Branchen, Einführung, Häufige Fragen, Kontakt |
+| `funktionen/` | Übersicht aller Funktionen und je Funktion ein Ordner mit `index.html` (Seitenliste in `tools/seiten.cjs`, Stand in `plan/VORLAGE.md`) |
+| `branchen/`, `sicherheit/`, `einfuehrung/`, `fragen/` | weitere Unterseiten: Branchen mit Getränke- und Fachhandel, Sicherheit und Betrieb, Einführung, alle häufigen Fragen |
 | `impressum.html` | Gerüst mit markierten Platzhaltern (`<span class="ph">[… – Angabe folgt]</span>`) |
 | `datenschutz.html` | Entwurf für eine statische Seite ohne Cookies und Tracking, Hosting GitHub Pages |
 | `404.html` | Fehlerseite; GitHub Pages liefert sie unter jeder unbekannten Adresse aus, deshalb Pfade ab `/` |
-| `assets/site.css` | alle Stile; Farben als Variablen nach der Palette von presio.eu (nur hell) |
-| `assets/site.js` | Navigation: fester Kopf ab dem Scrollen, Menü hinter dem Burger auf schmalen Bildschirmen |
+| `assets/site.css` | Grundstile, Kopf mit Ausklappmenüs, Fußzeile, Bausteine der Startseite; Farben als Variablen nach der Palette von presio.eu (nur hell) |
+| `assets/seiten.css` | Bausteine der Unterseiten (Hero mit Brotkrume, „Auf einen Blick“, Häkchen-Liste, „Das ist besonders“, Stand-Kasten, „Passt dazu“ …) |
+| `assets/site.js` | Navigation: fester Kopf ab dem Scrollen, Ausklappmenüs „Funktionen“/„Branchen“, Menü hinter dem Burger, aktuelle Seite markieren |
 | `assets/brand/` | Marke: Bildmarke, Wortmarke, Lockup, Favicons, `BRAND.md` |
 | `assets/screens/` | Produktbilder als WebP in zwei bis drei Breiten und das Geräte-Bild des Hero (siehe „Produktbilder“) |
 | `assets/og.png` | Vorschaubild für geteilte Links (1200 × 630), gerendert aus `tools/og.html` |
 | `favicon.ico`, `site.webmanifest` | Favicon (16/32/48, in Chrome aus `assets/brand/favicon.svg` gerendert) und Symbole für den Startbildschirm |
 | `robots.txt`, `sitemap.xml`, `CNAME` | Suchmaschinen und eigene Domain (`ordaneo.de`) |
 | `_config.yml` | sagt GitHub Pages, dass `README.md`, `tools/` und `BRAND.md` nicht veröffentlicht werden |
-| `tools/` | Vorlagen und Skripte für die Markendateien, das Open-Graph-Bild und das Geräte-Bild (werden nicht veröffentlicht) |
+| `tools/` | Vorlagen und Skripte für die Markendateien, das Open-Graph-Bild, das Geräte-Bild und die Unterseiten (werden nicht veröffentlicht) |
+| `tools/seiten.cjs` | Seitenliste, gemeinsamer Kopf und Fuß (`teile`), Prüfung aller Seiten (`pruefen`), Symbole und Bild-Markup |
+| `tools/verboten.local.txt` | **nicht versioniert** (`.gitignore`): Namen, die nie auf die Website und nie ins öffentliche Repository dürfen (Erstkunde, Orte der Region) – eine Regex je Zeile, `pruefen` liest sie mit |
+| `tools/seiten-browser.cjs` | Prüfung im Browser bei 1440 und 390 px (Scrollleiste, fremde Anfragen, Konsole, Bilder, Menüs) |
+| `tools/vorlage-seite.html` | Kopiervorlage für eine Unterseite |
+| `plan/` | Seitenplan, Bilderliste, Vorlage für die Unterseiten, Prüfbericht – **nicht versioniert** (`.gitignore`, seit 21.10.2026), liegt nur lokal |
 
 ## Lokale Vorschau
 
@@ -40,38 +49,59 @@ python3 -m http.server 9370 --bind 127.0.0.1
 Die Fehlerseite unter http://127.0.0.1:9370/404.html ansehen (der Python-Server zeigt bei unbekannten Adressen seine
 eigene Fehlerseite, GitHub Pages dagegen `404.html`).
 
+## Unterseiten bauen und prüfen
+
+Kopf und Fußzeile sind auf allen Seiten gleich und entstehen aus der Seitenliste in `tools/seiten.cjs`; in den
+Seiten stehen sie zwischen `<!-- KOPF -->`/`<!-- /KOPF -->` und `<!-- FUSS -->`/`<!-- /FUSS -->`. Nach einer
+Änderung an Menü oder Fußzeile:
+
+```sh
+node tools/seiten.cjs teile      # Kopf und Fuß in alle Seiten schreiben
+node tools/seiten.cjs pruefen    # Kopfbereich, Links, Bilder, Klassen, verbotene Wörter, Sitemap
+NODE_PATH=~/warenwirtschaft-marke/node_modules node tools/seiten-browser.cjs http://127.0.0.1:9370
+```
+
+Neue Seite: `tools/vorlage-seite.html` kopieren; Anleitung, Bausteine und offene Listen in `plan/VORLAGE.md`.
+
 ## Produktbilder
 
-Die Bilder sind echte Bildschirmfotos der umbenannten Anwendung (Stand 20.10.2026, Worktree `warenwirtschaft-ordaneo`,
-Demo-Daten, Bildmarke A noch mit weißer Einheit – seit der Entscheidung für die orange Einheit am 20.10.2026 abends
-neu aufzunehmen, ebenso das Geräte-Bild und danach `og.png`). Sie liegen als WebP in `assets/screens/<name>-hell-<breite>.webp`; `srcset`/`sizes` wählen
-die Breite.
+Die Bilder sind echte Bildschirmfotos der Anwendung (Stand 20./21.10.2026, Worktree `warenwirtschaft-marke`, Bildmarke
+A mit orangem Quadrat, Demo-Daten, hell, 2-fache Pixeldichte). Sie liegen als WebP in
+`assets/screens/<seite>-<name>-<breite>.webp`; `srcset`/`sizes` wählen die Breite. Die vollständige Liste der 40
+Aufnahmen für den Ausbau – mit Format, Seiten, Alt-Text, Bildunterschrift und Beleg – steht in `plan/BILDER.md`.
+
+Auf der Startseite im Einsatz:
 
 | Datei | Ansicht | Aufnahme | Rahmen auf der Seite |
 |---|---|---|---|
-| `uebersicht` | Start der Geschäftsführung (Johanna) | Desktop 1440 × 900, 2× | im Geräte-Bild (Rechner) |
-| `bestand` | Lager › MHD & Chargen, „Alle Chargen“, alle Standorte | Desktop 1440 × 900, 2× | Browserfenster (`.bild-rahmen`) |
-| `tour` | Verkauf › Disposition, Seitenleiste eingeklappt | Desktop 1440 × 900, 2× | Browserfenster |
-| `kasse` | Kasse › Kassieren (Lea), Bon aus der Demo-Geschichte (49,13 €) | iPad quer 1180 × 820, 2× | Tablet (`.tablet-rahmen`) und Geräte-Bild |
-| `erechnung` | Rechnung mit Karte „E-Rechnung“ (Claudia) | Desktop 1440 × 900, 2× | Browserfenster |
-| `app` | Inventur › Zählen am Telefon (Petra) | Telefon 390 × 844, 3× | Telefon (`.handy-rahmen`) und Geräte-Bild |
+| `auswertungen-start` | Start der Geschäftsführung (Johanna) | Desktop 1440 × 900 | im Geräte-Bild (Rechner) |
+| `chargen-liste` | Lager › MHD & Chargen, „Alle Chargen“, alle Standorte | Desktop 1440 × 900 | Browserfenster (`.bild-rahmen`) |
+| `touren-disposition` | Verkauf › Disposition, Seitenleiste eingeklappt, Karte weichgezeichnet und ohne Linien | Desktop 1440 × 900 | Browserfenster |
+| `kasse-verkauf` | Kasse › Kassieren (Lea), Bon aus der Demo-Geschichte (49,13 €) | iPad quer 1180 × 820 | Tablet (`.tablet-rahmen`) und Geräte-Bild |
+| `erechnung-rechnung` | Rechnung mit Karte „E-Rechnung“ (Claudia) | Desktop 1440 × 900 | Browserfenster |
+| `inventur-zaehlen` | Inventur › Zählen am Telefon (Petra) | Telefon 390 × 844 | Telefon (`.handy-rahmen`) und Geräte-Bild |
 | `geraete` | Rechner, iPad und iPhone (wie auf presio.eu) | aus `tools/geraete.html`, 2000 × 1440, transparent | Hero |
 
 **Was an den Bildern bearbeitet ist:** Der Demo-Betrieb trägt in der Anwendung Namen, Logo, Standorte und
 Artikelnummern des Erstkunden. Für die Aufnahmen wurde deshalb nur in einer eigenen, danach gelöschten Datenbank
-umbenannt: Betrieb „Getränke Muster“ ohne Logo und Hausfarbe, Orte „Nordstadt“, „Oststadt“, „Weststadt“ (mit
-erfundenen Postleitzahlen und Straßen der Standorte), Kennzeichen `M-OD …`, Artikelnummern `GM-…` statt `AL-…`. Für
-die Disposition wurde die nur geplante Tour 3 abgebrochen, damit planbare Aufträge zu sehen sind, und die Kartenkacheln
-(OpenStreetMap) sind weichgezeichnet, damit keine Ortsnamen den Standort des Erstkunden verraten. Sonst ist nichts
-retuschiert; die Hinweise „Demo-Daten“, „Schulungsbeleg (DEMO)“ und „DEMO – keine TSE“ sind echt und bleiben sichtbar.
+umbenannt: Betrieb „Getränke Muster“ ohne Logo und Hausfarbe, Orte „Nordstadt“, „Oststadt“, „Weststadt“ (beim
+Eisenwaren-Betrieb „Südstadt“, „Bergstadt“), erfundene Straßen und Postleitzahlen auch bei den Beispielkunden,
+Kundennamen ohne Ortsbezug, Kennzeichen `B-OD …`, Artikelnummern `GM-…` statt `AL-…`. Seit der Nachbesserung vom
+21.10.2026 tragen auch die Lieferanten erfundene Namen (etwa „Brauerei Muster KG“, „Brauhaus Beispiel GmbH“,
+„Kelterei Beispiel“) und die Postleitzahlen liegen im Bereich der Mustertexte (12345 ff.); Artikelnamen bleiben echt. Für die Disposition wurde die
+nur geplante Tour 3 abgebrochen, damit planbare Aufträge zu sehen sind; die Kartenkacheln (OpenStreetMap) sind stark
+weichgezeichnet und die Linien zwischen den Stopps ausgeblendet (ohne Routendienst wären es Luftlinien). Was sonst für
+einzelne Aufnahmen vorbereitet wurde, steht in `plan/BILDER.md`. Nichts ist retuschiert; die Hinweise „Demo-Daten“,
+„Schulungsbeleg (DEMO)“, „DEMO – keine TSE“ und „Demo-Modus“ sind echt und bleiben sichtbar.
 
 Neue Bilder: dieselben Ansichten in Chrome aufnehmen (Playwright, hell), wieder nur erfundene Daten und keinen
-Kundennamen zeigen, als WebP (Qualität etwa 82) in den Breiten 800, 1440 und 2400 (Kasse 2360, Telefon 564 und 846)
-ablegen. Danach das Geräte-Bild neu rendern (Vorschau muss laufen; Playwright aus einem vorhandenen Projekt leihen,
-hier nichts installieren; Pillow mit WebP nötig):
+Kundennamen zeigen, als WebP (Qualität etwa 82) ablegen – Desktop 800/1440 (wichtige Bilder auch 2400), Tablet
+800/1180 (auch 2360), Telefon 390/780. Danach das Geräte-Bild und `og.png` neu rendern (Vorschau muss laufen;
+Playwright aus einem vorhandenen Projekt leihen, hier nichts installieren; Pillow mit WebP nötig):
 
 ```sh
-NODE_PATH=~/warenwirtschaft-ordaneo/node_modules node tools/render-geraete.cjs http://127.0.0.1:9370
+NODE_PATH=~/warenwirtschaft-marke/node_modules node tools/render-geraete.cjs http://127.0.0.1:9370
+NODE_PATH=~/warenwirtschaft-marke/node_modules node tools/render-og.cjs http://127.0.0.1:9370
 ```
 
 ## Markendateien neu erzeugen
@@ -142,11 +172,12 @@ DMARC-Einträge des Mail-Anbieters diese Vorlage.
 ## Offene Punkte
 
 - **Impressum und Datenschutz:** Anbieter ist die Presio UG (haftungsbeschränkt) i. Gr., Hohenzollernstr. 7,
-  80801 München (Angaben wie im Impressum von presio.eu). Vertretung und Verantwortlicher nach MStV wie im Impressum von presio.eu (Christoph Gerhardt). Noch offen: Telefon,
-  Aufsichtsbehörde, Postfach-Anbieter, Grundlage der Übermittlung an GitHub; alles rechtlich prüfen lassen;
-  dann die Hinweise „Entwurf – vor Veröffentlichung prüfen“ entfernen.
+  80801 München (Angaben wie im Impressum von presio.eu). Vertretung und Verantwortlicher nach MStV wie im Impressum von presio.eu (Christoph Gerhardt). Seit 21.10.2026 eingetragen: Telefon
+  (Vertrieb, wie auf presio.eu), Aufsichtsbehörde (BayLDA), Grundlage der Übermittlung an GitHub (Data Privacy
+  Framework), Speicherdauer beim Hoster. Noch offen: Postfach-Anbieter, Datenschutzbeauftragte(r), Hinweise der
+  Anwendung; alles rechtlich prüfen lassen; dann die Hinweise „Entwurf – vor Veröffentlichung prüfen“ entfernen.
 - **Postfach `kontakt@ordaneo.de` muss noch eingerichtet werden** (MX und SPF/DKIM/DMARC bei Squarespace). Bis dahin
-  laufen E-Mail-Links ins Leere.
+  laufen E-Mail-Links ins Leere (Stand 21.10.2026: kein MX, SPF `-all`, DMARC `reject`).
 - **`erp.ordaneo.de`** ist seit 20.10.2026 eingerichtet (DNS, Server, Zertifikat); alle „Demo ansehen“-Knöpfe zeigen
   dorthin. Den neuen Namen zeigt die Anwendung erst, wenn der Umbenennungs-Zweig ausgeliefert ist.
 - **Öffentliche Demo:** Unter „Demo-Zugänge“ stehen nur erfundene Betriebe (gilt ab der Auslieferung vom 20.10.2026).

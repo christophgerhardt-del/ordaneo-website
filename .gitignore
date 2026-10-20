@@ -1,1 +1,5 @@
 .DS_Store
+# lokale Verbotsliste mit Kunden- und Ortsnamen – nie veröffentlichen
+tools/verboten.local.txt
+# Seitenplan, Bilderliste, Vorlage und Prüfbericht – intern, das Repository ist öffentlich (Entscheidung offen, siehe README)
+plan/

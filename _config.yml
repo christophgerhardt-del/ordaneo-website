@@ -4,3 +4,4 @@ exclude:
   - README.md
   - tools
   - assets/brand/BRAND.md
+  - plan

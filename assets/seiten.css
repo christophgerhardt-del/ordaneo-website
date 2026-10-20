@@ -1,0 +1,160 @@
+/* Ordaneo – Bausteine der Unterseiten (Funktionen, Branchen, Sicherheit, Einführung, Fragen) und der Startseite.
+   Ergänzt assets/site.css; jede Seite lädt beide Dateien. Farben nur aus den Variablen in site.css.
+   EINGEFROREN seit 21.10.2026: Seiten-Agenten ändern weder diese Datei noch site.css oder site.js, sondern bauen
+   nur aus den Klassen hier und in site.css. Katalog mit Beispielen: plan/VORLAGE.md. */
+
+/* ── Hero der Unterseiten: Brotkrume, Kicker, Zweizeiler, Satz, zwei Knöpfe, rechts ein Bild ── */
+.hero-band.unterseite .hero-inhalt { min-height: 0; padding: 128px 24px 108px; }
+.hero-band.unterseite .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 52px; }
+.hero-band.unterseite.ohne-bild .hero-grid { grid-template-columns: minmax(0, 1fr); }
+.hero-band.unterseite.ohne-bild .hero-grid > div { max-width: 760px; }
+.hero-band.unterseite.ohne-bild .hero-inhalt { padding-bottom: 92px; }
+.hero-band.unterseite h1 { font-size: clamp(2rem, 4.2vw, 2.85rem); }
+.hero-band.unterseite .hero-sub { max-width: 52ch; }
+/* dunkle Glas-Fläche wie auf der Startseite – die helle erreichte am Telefon über dem hellen Teil des Verlaufs nur 3,4 : 1 */
+.hero-band.unterseite a.btn.glas { background: rgba(10, 37, 64, 0.32); }
+.hero-band.unterseite a.btn.glas:hover { background: rgba(10, 37, 64, 0.45); }
+.hero-krumen { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hero-krumen [aria-current] { color: rgba(255, 255, 255, 0.88); }
+.hero-bild { margin: 0; min-width: 0; }
+.hero-bild .bild-rahmen { border-color: rgba(255, 255, 255, 0.35); box-shadow: 0 34px 60px -20px rgba(4, 30, 38, 0.6); }
+.hero-bild .handy-rahmen { width: min(272px, 72%); box-shadow: 0 34px 60px -18px rgba(4, 30, 38, 0.6); }
+.hero-bild .tablet-rahmen { box-shadow: 0 34px 60px -18px rgba(4, 30, 38, 0.6); }
+img.frei { display: block; width: 100%; height: auto; }
+@media (max-width: 900px) {
+  .hero-band.unterseite .hero-inhalt { padding: 120px 24px 52px; }
+  .hero-band.unterseite .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .hero-band.unterseite.ohne-bild .hero-inhalt { padding-bottom: 60px; }
+}
+
+/* ── Hilfsklassen ── */
+.nw { white-space: nowrap; }  /* z. B. „Bestell-App“ in Überschriften nicht am Bindestrich trennen */
+
+/* ── Abschnitte ── */
+section.block.eng-oben { padding-top: 12px; }
+section.block.eng-unten { padding-bottom: 20px; }
+.block h2 + .intro, .block .eyebrow + h2 + .intro { margin-top: 14px; }
+.weiter { margin-top: 26px; }
+.weiter a.leise + a.leise { margin-left: 22px; }
+.mitte { text-align: center; }
+.mitte h2, .mitte .intro { margin-left: auto; margin-right: auto; }
+
+/* Auf einen Blick: Kartenraster mit Symbol, Titel und einem Satz (4–6 Punkte) */
+.blick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 36px; }
+.blick.vierer { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 960px) { .blick, .blick.vierer { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+  .blick, .blick.vierer { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .blick > div { display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 14px; padding: 16px; }
+  .blick > div > .ikon { grid-row: span 2; margin-bottom: 0; }
+}
+.blick > div { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px 20px 22px; box-shadow: var(--schatten-karte); }
+.blick .ikon { width: 36px; height: 36px; border-radius: 9px; margin-bottom: 12px; }
+.blick .ikon svg { width: 18px; height: 18px; }
+.blick h3 { font-size: 1rem; margin-bottom: 5px; letter-spacing: -0.01em; }
+.blick p { font-size: 0.92rem; }
+
+/* Häkchen-Liste ohne eigenes SVG je Zeile: Kachelfarben wechseln blau, violett, amber, grün */
+ul.haken { list-style: none; margin: 22px 0 0; padding: 0; }
+ul.haken li { position: relative; padding: 7px 0 7px 34px; font-size: 0.99rem; }
+ul.haken li::before { content: ""; position: absolute; left: 0; top: 9px; width: 22px; height: 22px; border-radius: 6px;
+  background: var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 13px 13px no-repeat; }
+ul.haken li:nth-child(4n+2)::before { background-color: var(--violet); }
+ul.haken li:nth-child(4n+3)::before { background-color: var(--amber); }
+ul.haken li:nth-child(4n+4)::before { background-color: var(--gruen); }
+ul.haken b { color: var(--navy); }
+ul.haken.einfarbig li::before { background-color: var(--blue); }
+.split .hinweis-kasten { margin-top: 22px; }
+
+/* Bildbausteine (Rahmen kommen aus site.css: .bild-rahmen, .tablet-rahmen, .handy-rahmen) */
+.split figure, .split .bild-zuerst { min-width: 0; }
+.bild-breit { margin: 40px auto 0; max-width: 940px; }
+.bild-paar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 40px; align-items: start; }
+@media (max-width: 760px) { .bild-paar { grid-template-columns: minmax(0, 1fr); } }
+.handy-reihe { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; margin-top: 40px; align-items: start; }
+.handy-reihe .handy-rahmen { width: 100%; max-width: 230px; border-width: 7px; border-radius: 30px; padding-top: 17px; }
+.handy-reihe .handy-rahmen::before { top: 5px; width: 54px; height: 14px; }
+.handy-reihe figcaption { font-size: 0.82rem; }
+@media (max-width: 560px) { .handy-reihe { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; } }
+
+/* Das ist besonders */
+.besonders { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 22px; align-items: start;
+  background: linear-gradient(120deg, var(--petrol-hell) 0%, #fff 100%); border: 1px solid var(--petrol-linie); border-radius: 16px; padding: 32px 34px; }
+.soft .besonders { background: linear-gradient(120deg, var(--petrol-hell) 0%, #fff 100%); }
+.besonders > .ikon { width: 48px; height: 48px; border-radius: 12px; margin: 0; }
+.besonders > .ikon svg { width: 24px; height: 24px; }
+.besonders .eyebrow { margin-bottom: 8px; color: var(--blue-dark); }
+.besonders p { color: var(--navy); font-size: 1.12rem; line-height: 1.55; max-width: 72ch; }
+.besonders p + p { margin-top: 10px; }
+@media (max-width: 600px) { .besonders { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 24px 20px; } .besonders p { font-size: 1.04rem; } }
+
+/* Stand heute (nur wo nötig: Kasse, Apps, Assistent …) */
+.stand-kasten { display: flex; gap: 14px; align-items: flex-start; margin-top: 28px; padding: 16px 18px; border-radius: 12px;
+  background: var(--hinweis-flaeche); border: 1px solid var(--hinweis-linie); color: var(--hinweis-text); font-size: 0.95rem; max-width: 860px; }
+.stand-kasten > svg { flex: none; color: var(--amber); margin-top: 2px; }
+.stand-kasten b { color: var(--hinweis-text); }
+.stand-kasten a { color: var(--hinweis-text); font-weight: 600; }
+.stand-kasten p + p { margin-top: 6px; }
+.split .stand-kasten { margin-top: 22px; }
+
+/* Beispielfragen als Sprechblasen (Assistent, Fragen-Seite) */
+.fragen-liste { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.fragen-liste li { background: #fff; border: 1px solid var(--line); border-radius: 16px 16px 16px 4px; padding: 10px 16px;
+  color: var(--navy); font-weight: 550; box-shadow: var(--schatten-karte); max-width: 100%; }
+
+/* Funktionskarten: kleine Karten in Vierergruppen (Übersicht) und Karten mit zwei Links (Startseite) */
+.karten.vierer { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+@media (max-width: 1000px) { .karten.vierer { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .karten.vierer { grid-template-columns: minmax(0, 1fr); } }
+.karte.klein { padding: 20px 18px; }
+.karte.klein .ikon { width: 36px; height: 36px; border-radius: 9px; margin-bottom: 12px; }
+.karte.klein h3 { font-size: 1rem; }
+.karte.klein p { font-size: 0.9rem; }
+.karte h4 { font-size: 1rem; margin-bottom: 8px; letter-spacing: -0.01em; }
+.karte > a.leise { display: inline-block; margin-top: 12px; }
+.grundsaetze ul.punkte, .grundsaetze ul.haken { display: contents; }
+.gruppe-kopf { margin-top: 44px; font-size: 1.12rem; display: flex; align-items: center; gap: 10px; }
+.gruppe-kopf::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.karte .mehr-links { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 14px; }
+.karte .mehr-links a { color: var(--blue-dark); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+.karte .mehr-links a::after { content: "\00a0→"; }
+.karte .mehr-links a:hover { text-decoration: underline; }
+a.fx { text-decoration: none; color: inherit; border-radius: 0; }
+a.fx h3::after { content: "\00a0→"; color: var(--blue-dark); }
+a.fx:hover h3 { color: var(--blue-dark); }
+.profil a.leise { display: inline-block; margin-top: 14px; }
+
+/* Weitere Funktionen („Passt dazu“): 3–4 kleine Link-Karten */
+.passt { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 30px; }
+.passt.dreier { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 960px) { .passt, .passt.dreier { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .passt, .passt.dreier { grid-template-columns: minmax(0, 1fr); } }
+.passt a { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border-radius: 12px; text-decoration: none; color: var(--body);
+  background: #fff; border: 1px solid var(--line); box-shadow: var(--schatten-karte); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.passt a:hover { transform: translateY(-2px); box-shadow: var(--schatten-schwebe); }
+@media (prefers-reduced-motion: reduce) { .passt a:hover { transform: none; } }
+.passt .fi { flex: none; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; margin-top: 1px; }
+.passt .fi svg { width: 17px; height: 17px; }
+.passt b { display: block; color: var(--navy); font-size: 0.95rem; line-height: 1.35; }
+.passt b::after { content: "\00a0→"; color: var(--blue-dark); }
+.passt .zeile { display: block; font-size: 0.84rem; line-height: 1.45; color: var(--faint); margin-top: 3px; }
+
+/* Sprungmarken (Fragen-Seite) und Fragengruppen */
+.sprungmarken { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.sprungmarken a { background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 7px 16px; font-size: 0.92rem; font-weight: 550;
+  color: var(--navy); text-decoration: none; }
+.sprungmarken a:hover { border-color: var(--blue); color: var(--blue-dark); }
+.faq-gruppe { margin-top: 56px; scroll-margin-top: 84px; }
+.faq-gruppe:first-of-type { margin-top: 40px; }
+.faq-gruppe h2 { font-size: clamp(1.3rem, 2.6vw, 1.6rem); }
+.faq-gruppe .faq { margin-top: 18px; }
+.faq .antwort a { color: var(--blue-dark); font-weight: 600; }
+.faq .antwort p + p { margin-top: 8px; }
+
+/* Einfache Tabelle (in einer Hülle, die bei Bedarf in sich scrollt – nie die Seite) */
+.tabelle-huelle { margin-top: 28px; overflow-x: auto; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.tabelle { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+.tabelle th, .tabelle td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+.tabelle thead th { background: var(--soft); color: var(--navy); font-weight: 650; }
+.tabelle tbody th { color: var(--navy); font-weight: 600; }
+.tabelle tr:last-child > * { border-bottom: 0; }

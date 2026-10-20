@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ordaneo – Warenwirtschaft für Handel und Großhandel</title>
-<meta name="description" content="Ordaneo ist eine Warenwirtschaft für Handels- und Großhandelsbetriebe mit Lager, Filialen und Auslieferung: Bestand mit Charge und MHD, Einkauf, Aufträge, Touren, Pfand und Leergut, Rechnung, E-Rechnung und Kasse in einer Anwendung.">
+<meta name="description" content="Warenwirtschaft für Handel und Großhandel: Bestand mit Charge und MHD, Einkauf, Aufträge, Touren, Pfand und Leergut, Rechnung, E-Rechnung und Kasse.">
 <link rel="canonical" href="https://ordaneo.de/">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#0A4D5C">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/seiten.css">
 <script src="/assets/site.js" defer></script>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
@@ -28,19 +29,56 @@
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+<!-- KOPF -->
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <nav class="top" id="nav" aria-label="Hauptnavigation">
   <div class="wrap nav-inner">
     <a class="logo" href="/" aria-label="Ordaneo – zur Startseite"><span class="logo-mark"><svg viewBox="6 6 20 20" aria-hidden="true" focusable="false"><path class="zf" d="M14.5 23.5H13a4.5 4.5 0 0 1-4.5-4.5v-6A4.5 4.5 0 0 1 13 8.5h6a4.5 4.5 0 0 1 4.5 4.5v1.5" fill="none" stroke="#f9fafb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect class="ze" x="18" y="18" width="7" height="7" rx="1.75" fill="#e8650e"/></svg></span><svg class="wort" viewBox="0 0 721.92 142" aria-hidden="true" focusable="false"><g transform="translate(0 40)" fill="none" stroke="currentColor"><path stroke-width="18" d="M607.13 50H514.42"/><path stroke-width="21" d="M10.5 50a41.5 41.5 0 1 0 83 0a41.5 41.5 0 1 0 -83 0M128.5 0V100M128.5 20.74A40 40 0 0 1 176.08 13.18M264.75 24.03A41.5 41.5 0 1 0 264.75 75.97M264.75 -40V100M373.62 24.03A41.5 41.5 0 1 0 373.62 75.97M373.62 0V100M410.62 0V100M410.62 20.74A40 40 0 0 1 479.42 48.5V100M596.79 57.18A41.5 41.5 0 1 0 586.76 77.77M628.42 50a41.5 41.5 0 1 0 83 0a41.5 41.5 0 1 0 -83 0"/></g></svg></a>
-    <div class="nav-links"><a href="#funktionen">Funktionen</a><a href="#ablauf">Ablauf</a><a href="#branchen">Branchen</a><a href="#einfuehrung">Einführung</a><a href="#kontakt">Kontakt</a></div>
+    <div class="nav-links">
+      <div class="hat-menue mega">
+        <a class="hat-knopf" href="/funktionen/">Funktionen</a><button class="hat-pfeil" type="button" aria-expanded="false" aria-controls="flyout-funktionen" aria-label="Menü Funktionen öffnen"></button>
+        <div class="flyout gross" id="flyout-funktionen">
+        <div><p class="flyout-titel">Ware &amp; Lager</p><a href="/funktionen/lager-bestand/"><span class="fi bg-blau"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span><span><b>Lager &amp; Bestand</b><span class="zeile">Bestand aus jeder Bewegung, bis auf den Lagerplatz.</span></span></a><a href="/funktionen/chargen-mhd/"><span class="fi bg-amber"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v3.5l4 4.5 4-4.5V3M8 21v-3.5l4-4.5 4 4.5V21"/></svg></span><span><b>Chargen &amp; MHD</b><span class="zeile">Was zuerst abläuft, geht zuerst raus.</span></span></a><a href="/funktionen/pfand-leergut/"><span class="fi bg-teal"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4.5h-4.5"/></svg></span><span><b>Pfand &amp; Leergut</b><span class="zeile">Vom Kastenpfand bis zum Leergutkonto – an Kasse und Tür.</span></span></a><a href="/funktionen/inventur/"><span class="fi bg-gruen"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.5h6V4M8.5 12.5l2.4 2.4 4.6-4.6"/></svg></span><span><b>Inventur</b><span class="zeile">Blind am Telefon zählen, permanent oder zum Stichtag.</span></span></a></div>
+        <div><p class="flyout-titel">Einkauf &amp; Verkauf</p><a href="/funktionen/einkauf/"><span class="fi bg-violett"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.6-1.2L21 8H6.6"/></svg></span><span><b>Einkauf</b><span class="zeile">Bestellvorschlag, Freigabe, Wareneingang, Rechnungsprüfung.</span></span></a><a href="/funktionen/verkauf/"><span class="fi bg-blau"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.5 7.5h13l-1 13.5h-11z"/><path d="M9 7.5V6a3 3 0 0 1 6 0v1.5"/></svg></span><span><b>Verkauf, Kommission &amp; Verleih</b><span class="zeile">Angebot bis Rücknahme, Kreditlimit, Festservice.</span></span></a><a href="/funktionen/preise-aktionen/"><span class="fi bg-rose"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></span><span><b>Preise &amp; Aktionen</b><span class="zeile">Preislisten, Massenänderung mit Vorschau, Etiketten.</span></span></a><a href="/funktionen/online-bestellung/"><span class="fi bg-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span><span><b>Online-Bestellung &amp; Abholung</b><span class="zeile">Bestell-App anbinden, Lieferfenster, Gutscheine, Abholcode.</span></span></a></div>
+        <div><p class="flyout-titel">Auslieferung, Kasse &amp; Geld</p><a href="/funktionen/touren/"><span class="fi bg-amber"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 6.5h11v9.5h-11z"/><path d="M13.5 10h4l3.5 3.5V16h-7.5"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg></span><span><b>Touren &amp; Auslieferung</b><span class="zeile">Disposition, Ladeliste, Fahrer an der Tür.</span></span></a><a href="/funktionen/kasse/"><span class="fi bg-rose"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2.5h12v19l-3-2-3 2-3-2-3 2z"/><path d="M9 7.5h6M9 11.5h6M9 15.5h3"/></svg></span><span><b>Kasse</b><span class="zeile">Pfand, Leergut und Alterskontrolle am selben Bon.</span></span></a><a href="/funktionen/rechnung/"><span class="fi bg-gruen"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span><span><b>Rechnung &amp; Mahnwesen</b><span class="zeile">Rechnungslauf, Zahlungen, Mahnwesen, Buchungsexport.</span></span></a><a href="/funktionen/e-rechnung/"><span class="fi bg-teal"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M10 12.5l-2 2.25 2 2.25M14 12.5l2 2.25-2 2.25"/></svg></span><span><b>E-Rechnung</b><span class="zeile">XRechnung beim Festschreiben, Eingang prüfen und zuordnen.</span></span></a></div>
+        <div><p class="flyout-titel">Überblick &amp; Steuerung</p><a href="/funktionen/auswertungen/"><span class="fi bg-violett"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span><b>Auswertungen</b><span class="zeile">Kennzahlen je Rolle – jede Zahl bis zum Beleg.</span></span></a><a href="/funktionen/ki-assistent/"><span class="fi bg-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"/></svg></span><span><b>KI-Assistent</b><span class="zeile">Fragt, sucht und ändert – mit Ihren Rechten, nach Ihrer Bestätigung.</span></span></a><a href="/funktionen/rechte-freigaben/"><span class="fi bg-blau"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span><b>Rechte &amp; Freigaben</b><span class="zeile">Je Rolle und Standort, Vier-Augen, Vorschau, Protokoll.</span></span></a><a href="/funktionen/apps-scannen/"><span class="fi bg-teal"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7.5V5a2 2 0 0 1 2-2h2.5M16.5 3H19a2 2 0 0 1 2 2v2.5M21 16.5V19a2 2 0 0 1-2 2h-2.5M7.5 21H5a2 2 0 0 1-2-2v-2.5M7.5 8v8M10.5 8v8M13.5 8v8M16.5 8v8"/></svg></span><span><b>Apps &amp; Scannen</b><span class="zeile">Im Lager am Telefon, im Laden am Tablet.</span></span></a></div>
+          <div class="flyout-fuss"><span>Ein Bestand für Lager, Einkauf, Verkauf, Auslieferung und Kasse.</span><a href="/funktionen/">Alle Funktionen im Überblick</a></div>
+        </div>
+      </div>
+      <div class="hat-menue">
+        <a class="hat-knopf" href="/branchen/">Branchen</a><button class="hat-pfeil" type="button" aria-expanded="false" aria-controls="flyout-branchen" aria-label="Menü Branchen öffnen"></button>
+        <div class="flyout" id="flyout-branchen">
+          <a href="/branchen/getraenkehandel/"><span class="fi bg-amber"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2.5h4M10.5 2.5v4l-2 3a3 3 0 0 0-.5 1.7V20a1.5 1.5 0 0 0 1.5 1.5h5a1.5 1.5 0 0 0 1.5-1.5v-8.8a3 3 0 0 0-.5-1.7l-2-3v-4M8 14h8"/></svg></span><span><b>Getränkehandel</b><span class="zeile">Getränkefachgroßhandel und Getränkemärkte</span></span></a><a href="/branchen/fachhandel/"><span class="fi bg-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span><b>Fach- und Eisenwarenhandel</b><span class="zeile">Eisenwaren, Werkzeug, Fachhandel ohne Pfand</span></span></a>
+          <div class="flyout-fuss"><a href="/branchen/">Branchen im Überblick</a></div>
+        </div>
+      </div>
+      <a href="/einfuehrung/">Einführung</a><a href="/sicherheit/">Sicherheit</a><a href="/fragen/">Fragen</a>
+    </div>
     <button class="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menue"><span></span><span></span><span></span></button>
     <a class="btn hell" href="https://erp.ordaneo.de">Demo ansehen</a>
   </div>
 </nav>
 <div class="mobil-menue" id="menue" inert>
-  <a href="#funktionen"><span class="fi bg-blau"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span>Funktionen</a><a href="#ablauf"><span class="fi bg-violett"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 17H7a5 5 0 0 1 0-10h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg></span>Ablauf und Belege</a><a href="#touren"><span class="fi bg-amber"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 6.5h11v9.5h-11z"/><path d="M13.5 10h4l3.5 3.5V16h-7.5"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg></span>Touren und Auslieferung</a><a href="#kasse"><span class="fi bg-rose"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2.5h12v19l-3-2-3 2-3-2-3 2z"/><path d="M9 7.5h6M9 11.5h6M9 15.5h3"/></svg></span>Kasse</a><a href="#branchen"><span class="fi bg-teal"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/><path d="M16 9h2a2 2 0 0 1 2 2v10M2 21h20M8 7h4M8 11h4M8 15h4"/></svg></span>Branchen</a><a href="#einfuehrung"><span class="fi bg-gruen"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Einführung</a><a href="#kontakt"><span class="fi bg-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span>Kontakt</a>
+  <details>
+    <summary>Funktionen</summary>
+    <div>
+      <a class="mm-alle" href="/funktionen/">Alle Funktionen im Überblick</a>
+      <p class="mm-titel">Ware &amp; Lager</p><a href="/funktionen/lager-bestand/"><span class="fi bg-blau"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span>Lager &amp; Bestand</a><a href="/funktionen/chargen-mhd/"><span class="fi bg-amber"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v3.5l4 4.5 4-4.5V3M8 21v-3.5l4-4.5 4 4.5V21"/></svg></span>Chargen &amp; MHD</a><a href="/funktionen/pfand-leergut/"><span class="fi bg-teal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4.5h-4.5"/></svg></span>Pfand &amp; Leergut</a><a href="/funktionen/inventur/"><span class="fi bg-gruen"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.5h6V4M8.5 12.5l2.4 2.4 4.6-4.6"/></svg></span>Inventur</a>
+      <p class="mm-titel">Einkauf &amp; Verkauf</p><a href="/funktionen/einkauf/"><span class="fi bg-violett"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.6-1.2L21 8H6.6"/></svg></span>Einkauf</a><a href="/funktionen/verkauf/"><span class="fi bg-blau"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.5 7.5h13l-1 13.5h-11z"/><path d="M9 7.5V6a3 3 0 0 1 6 0v1.5"/></svg></span>Verkauf, Kommission &amp; Verleih</a><a href="/funktionen/preise-aktionen/"><span class="fi bg-rose"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></span>Preise &amp; Aktionen</a><a href="/funktionen/online-bestellung/"><span class="fi bg-navy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span>Online-Bestellung &amp; Abholung</a>
+      <p class="mm-titel">Auslieferung, Kasse &amp; Geld</p><a href="/funktionen/touren/"><span class="fi bg-amber"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 6.5h11v9.5h-11z"/><path d="M13.5 10h4l3.5 3.5V16h-7.5"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg></span>Touren &amp; Auslieferung</a><a href="/funktionen/kasse/"><span class="fi bg-rose"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2.5h12v19l-3-2-3 2-3-2-3 2z"/><path d="M9 7.5h6M9 11.5h6M9 15.5h3"/></svg></span>Kasse</a><a href="/funktionen/rechnung/"><span class="fi bg-gruen"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span>Rechnung &amp; Mahnwesen</a><a href="/funktionen/e-rechnung/"><span class="fi bg-teal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M10 12.5l-2 2.25 2 2.25M14 12.5l2 2.25-2 2.25"/></svg></span>E-Rechnung</a>
+      <p class="mm-titel">Überblick &amp; Steuerung</p><a href="/funktionen/auswertungen/"><span class="fi bg-violett"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>Auswertungen</a><a href="/funktionen/ki-assistent/"><span class="fi bg-navy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"/></svg></span>KI-Assistent</a><a href="/funktionen/rechte-freigaben/"><span class="fi bg-blau"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>Rechte &amp; Freigaben</a><a href="/funktionen/apps-scannen/"><span class="fi bg-teal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7.5V5a2 2 0 0 1 2-2h2.5M16.5 3H19a2 2 0 0 1 2 2v2.5M21 16.5V19a2 2 0 0 1-2 2h-2.5M7.5 21H5a2 2 0 0 1-2-2v-2.5M7.5 8v8M10.5 8v8M13.5 8v8M16.5 8v8"/></svg></span>Apps &amp; Scannen</a>
+    </div>
+  </details>
+  <details>
+    <summary>Branchen</summary>
+    <div>
+      <a class="mm-alle" href="/branchen/">Branchen im Überblick</a><a href="/branchen/getraenkehandel/"><span class="fi bg-amber"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2.5h4M10.5 2.5v4l-2 3a3 3 0 0 0-.5 1.7V20a1.5 1.5 0 0 0 1.5 1.5h5a1.5 1.5 0 0 0 1.5-1.5v-8.8a3 3 0 0 0-.5-1.7l-2-3v-4M8 14h8"/></svg></span>Getränkehandel</a><a href="/branchen/fachhandel/"><span class="fi bg-navy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>Fach- und Eisenwarenhandel</a>
+    </div>
+  </details>
+  <a href="/einfuehrung/">Einführung</a><a href="/sicherheit/">Sicherheit und Betrieb</a><a href="/fragen/">Häufige Fragen</a>
   <a class="btn blau" href="https://erp.ordaneo.de">Demo ansehen</a>
 </div>
+<!-- /KOPF -->
 
 <main id="inhalt">
 <div class="hero-band">
@@ -67,7 +105,7 @@
     <div class="zahl"><b>1 System</b><span>für Lager, Einkauf, Verkauf, Touren und Kasse</span></div>
     <div class="zahl"><span class="zahl-kopf"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 17H7a5 5 0 0 1 0-10h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg><b>BE → RE</b></span><span>eine Belegkette vom Bestellvorschlag bis zur Rechnung</span></div>
     <div class="zahl"><b>3 Plattformen</b><span>Browser, App für iPhone und iPad, App für Android</span></div>
-    <div class="zahl"><span class="zahl-kopf"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><b>Nürnberg</b></span><span>Standort des Servers im heutigen Betrieb</span></div>
+    <div class="zahl"><span class="zahl-kopf"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><b>Nürnberg</b></span><span>Standort des Demo-Servers</span></div>
   </div>
 </div>
 <div class="wrap trust-leiste">
@@ -79,50 +117,67 @@
 <section class="block" id="funktionen">
   <div class="wrap">
     <div class="eyebrow">Die Funktionen</div>
-    <h2>Alles, was mit Ware passiert – an einem Ort</h2>
+    <h2>Alles, was mit Ware passiert&nbsp;– an einem Ort</h2>
     <p class="intro">Lager, Einkauf, Verkauf, Auslieferung, Kasse und Buchhaltung greifen auf denselben Bestand und dieselben Belege zu. Was Sie nicht brauchen, schalten Sie ab.</p>
     <div class="karten">
-        <a class="karte" href="#lager">
+        <a class="karte" href="/funktionen/lager-bestand/">
           <div class="ikon bg-blau"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
           <h3>Lager &amp; Bestand</h3>
           <p>Bestand aus jeder Bewegung: Chargen und MHD, Lagerplätze und Umlagerung über den Transit.</p>
           <span class="mehr">Mehr erfahren</span>
         </a>
-        <a class="karte" href="#ablauf">
+        <div class="karte">
           <div class="ikon bg-violett"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.6-1.2L21 8H6.6"/></svg></div>
           <h3>Einkauf &amp; Aufträge</h3>
           <p>Bestellvorschlag mit Freigabe, Wareneingang am Scanner, Aufträge mit Kreditlimit und Rückstand.</p>
-          <span class="mehr">Mehr erfahren</span>
-        </a>
-        <a class="karte" href="#touren">
+          <div class="mehr-links"><a href="/funktionen/einkauf/">Einkauf</a><a href="/funktionen/verkauf/">Verkauf und Aufträge</a></div>
+        </div>
+        <a class="karte" href="/funktionen/touren/">
           <div class="ikon bg-amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 6.5h11v9.5h-11z"/><path d="M13.5 10h4l3.5 3.5V16h-7.5"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg></div>
           <h3>Touren &amp; Auslieferung</h3>
           <p>Planen per Ziehen oder per Vorschlag, mit Lieferregeln und Fahreransicht – abgeschlossen an der Tür.</p>
           <span class="mehr">Mehr erfahren</span>
         </a>
-        <a class="karte" href="#kasse">
+        <a class="karte" href="/funktionen/kasse/">
           <div class="ikon bg-rose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2.5h12v19l-3-2-3 2-3-2-3 2z"/><path d="M9 7.5h6M9 11.5h6M9 15.5h3"/></svg></div>
           <h3>Kasse</h3>
           <p>Pfand, Leergut, Gutscheine und Alterskontrolle – mit Anbindung an eine Cloud-TSE.</p>
           <span class="mehr">Mehr erfahren</span>
         </a>
-        <a class="karte" href="#rechnung">
+        <div class="karte">
           <div class="ikon bg-gruen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div>
           <h3>Rechnung &amp; E-Rechnung</h3>
           <p>XRechnung beim Festschreiben, offene Posten, Mahnlauf und Buchungsexport für die Steuerkanzlei.</p>
-          <span class="mehr">Mehr erfahren</span>
-        </a>
-        <a class="karte" href="#apps">
+          <div class="mehr-links"><a href="/funktionen/rechnung/">Rechnung</a><a href="/funktionen/e-rechnung/">E-Rechnung</a></div>
+        </div>
+        <a class="karte" href="/funktionen/apps-scannen/">
           <div class="ikon bg-teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></div>
           <h3>Apps &amp; Scannen</h3>
           <p>Wareneingang, Inventur und Leergut am Telefon, die Kasse am Tablet.</p>
           <span class="mehr">Mehr erfahren</span>
         </a>
     </div>
+    <p class="weiter"><a class="leise" href="/funktionen/">Alle Funktionen im Überblick</a></p>
   </div>
 </section>
 
-<section class="block soft" id="ablauf">
+<section class="block soft" id="besonders">
+  <div class="wrap">
+    <div class="eyebrow">Besonderheiten</div>
+    <h2>Was Ordaneo besonders macht</h2>
+    <p class="intro">Nicht einzelne Funktionen, sondern wie sie zusammenspielen: ein Bestand, eine Prüfung, eine Belegkette.</p>
+    <div class="karten">
+        <a class="karte" href="/funktionen/pfand-leergut/"><div class="ikon bg-teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4.5h-4.5"/></svg></div><h3>Pfand und Leergut durchgängig</h3><p>Kastenpfand als Summe seiner Teile, Leergutkonten für Kunden und Lieferanten, Rücknahme an Kasse, Lager und Haustür – alles im selben Bestand.</p><span class="mehr">Mehr erfahren</span></a>
+        <a class="karte" href="/funktionen/rechte-freigaben/"><div class="ikon bg-blau"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Vorschau vor jeder Änderung</h3><p>Jede Aktion rechnet ihre Wirkung erst durch, bestätigt wird genau diese Wirkung. Oberfläche, Schnittstelle und Assistent gehen durch dieselbe Prüfung.</p><span class="mehr">Mehr erfahren</span></a>
+        <a class="karte" href="/funktionen/rechte-freigaben/#vier-augen"><div class="ikon bg-violett"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20"/><circle cx="10" cy="8" r="3.5"/><path d="M20 20v-1.5a3.5 3.5 0 0 0-2.6-3.4M15.5 4.6a3.5 3.5 0 0 1 0 6.8"/></svg></div><h3>Vier Augen bei Geld und Bestand</h3><p>Grenzen je Rolle für Rabatt, Bestellwert, Korrektur und Kreditlimit. Darüber gibt eine zweite Person frei – nie man selbst.</p><span class="mehr">Mehr erfahren</span></a>
+        <div class="karte"><div class="ikon bg-amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 6.5h11v9.5h-11z"/><path d="M13.5 10h4l3.5 3.5V16h-7.5"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg></div><h3>Von der <span class="nw">Bestell-App</span> bis zur Haustür</h3><p>Lieferfenster, Gebiete und Gutscheine an einer Stelle, Touren mit Vorschlag – und an der Tür Leergut zurück und kassieren.</p><div class="mehr-links"><a href="/funktionen/online-bestellung/">Online-Bestellung</a><a href="/funktionen/touren/">Touren</a></div></div>
+        <a class="karte" href="/funktionen/e-rechnung/"><div class="ikon bg-gruen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M10 12.5l-2 2.25 2 2.25M14 12.5l2 2.25-2 2.25"/></svg></div><h3>E-Rechnung rein und raus</h3><p>Die XRechnung entsteht beim Festschreiben und wird vorher geprüft. Eingehende E-Rechnungen ordnet Ordaneo Bestellung und Wareneingang zu.</p><span class="mehr">Mehr erfahren</span></a>
+        <a class="karte" href="/funktionen/ki-assistent/"><div class="ikon bg-navy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"/></svg></div><h3>Ein Assistent mit Ihren Rechten</h3><p>Er liest sofort und ändert nur nach Vorschau und Ihrer Bestätigung – im Protokoll als „über KI-Assistent“. Aus, bis Sie ihn einschalten.</p><span class="mehr">Mehr erfahren</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="ablauf">
   <div class="wrap">
     <div class="eyebrow">Ein Ablauf, ein System</div>
     <h2>Vom Bestellvorschlag bis zum Leergut</h2>
@@ -139,7 +194,7 @@
   </div>
 </section>
 
-<section class="block" id="lager">
+<section class="block soft" id="lager">
   <div class="wrap split breit-bild">
     <div>
       <div class="eyebrow">Lager und Bestand</div>
@@ -151,38 +206,39 @@
           <li><span class="dot bg-amber"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Korrekturen nur mit Grund:</b> über Ihrer Freigabegrenze bucht erst eine zweite Person.</span></li>
           <li><span class="dot bg-gruen"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Gebinde:</b> Kasten und Flasche in einem Artikel, mit Barcode je Gebinde.</span></li>
         </ul>
-      <a class="leise" href="https://erp.ordaneo.de">In der Demo ansehen</a>
+      <p class="weiter"><a class="leise" href="/funktionen/lager-bestand/">Lager und Bestand</a><a class="leise" href="/funktionen/chargen-mhd/">Chargen und MHD</a></p>
     </div>
     <figure>
-          <div class="bild-rahmen"><div class="kopf" aria-hidden="true"><i></i><i></i><i></i><span>erp.ordaneo.de</span></div><img src="/assets/screens/bestand-hell-1440.webp" srcset="/assets/screens/bestand-hell-800.webp 800w, /assets/screens/bestand-hell-1440.webp 1440w, /assets/screens/bestand-hell-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 620px" width="1440" height="900" loading="lazy" decoding="async" alt="Liste „MHD &amp; Chargen“: Chargen je Artikel und Standort mit MHD, Restlaufzeit, Status und Bestand – eine Charge ist abgelaufen, die übrigen sind frei"></div>
+          <div class="bild-rahmen"><div class="kopf" aria-hidden="true"><i></i><i></i><i></i><span>erp.ordaneo.de</span></div><img src="/assets/screens/chargen-liste-1440.webp" srcset="/assets/screens/chargen-liste-800.webp 800w, /assets/screens/chargen-liste-1440.webp 1440w, /assets/screens/chargen-liste-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 620px" width="1440" height="900" loading="lazy" decoding="async" alt="Liste „MHD &amp; Chargen“: Chargen je Artikel und Standort mit MHD, Restlaufzeit, Status und Bestand – eine Charge ist abgelaufen, die übrigen sind frei"></div>
           <figcaption>Chargen je Artikel und Standort, mit MHD und Restlaufzeit.</figcaption>
         </figure>
   </div>
 </section>
 
-<section class="block soft" id="touren">
+<section class="block" id="touren">
   <div class="wrap split breit-bild links">
     <div class="bild-zuerst">
     <figure>
-          <div class="bild-rahmen"><div class="kopf" aria-hidden="true"><i></i><i></i><i></i><span>erp.ordaneo.de</span></div><img src="/assets/screens/tour-hell-1440.webp" srcset="/assets/screens/tour-hell-800.webp 800w, /assets/screens/tour-hell-1440.webp 1440w, /assets/screens/tour-hell-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 620px" width="1440" height="900" loading="lazy" decoding="async" alt="Disposition für einen Tourtag: drei planbare Aufträge, eine Karte mit den Stopps und zwei freigegebene Touren als Spalten mit Fahrer, Startzeit, Auslastung und Stopps"></div>
-          <figcaption>Disposition: Aufträge, Karte und Touren auf einer Seite.</figcaption>
+          <div class="bild-rahmen"><div class="kopf" aria-hidden="true"><i></i><i></i><i></i><span>erp.ordaneo.de</span></div><img src="/assets/screens/touren-disposition-1440.webp" srcset="/assets/screens/touren-disposition-800.webp 800w, /assets/screens/touren-disposition-1440.webp 1440w, /assets/screens/touren-disposition-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 620px" width="1440" height="900" loading="lazy" decoding="async" alt="Disposition für einen Tourtag: drei planbare Aufträge, die Stopps auf einer Karte und zwei freigegebene Touren als Spalten mit Fahrer, Startzeit, Auslastung und Stopps"></div>
+          <figcaption>Disposition: Aufträge, Stopps auf der Karte und Touren auf einer Seite.</figcaption>
         </figure>
     </div>
     <div>
       <div class="eyebrow">Touren und Auslieferung</div>
-      <h2>Planen heißt Ziehen – abgeschlossen wird an der Tür</h2>
+      <h2>Planen heißt Ziehen&nbsp;– abgeschlossen wird an der Tür</h2>
       <p class="intro">Die Disposition zeigt planbare Aufträge, Karte und Touren nebeneinander. Sie ziehen Aufträge auf ein Fahrzeug oder lassen Ordaneo einen Vorschlag machen – mit Vorschau, bevor etwas gilt.</p>
       <ul class="punkte">
-          <li><span class="dot bg-blau"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Touren freigeben:</b> Reihenfolge optimieren, Ladeliste drucken, Touren live verfolgen.</span></li>
+          <li><span class="dot bg-blau"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Touren freigeben:</b> Reihenfolge optimieren, Ladeliste drucken.</span></li>
           <li><span class="dot bg-violett"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Lieferregeln:</b> Zeitfenster mit Kapazität, Liefergebiete nach Postleitzahl, Liefergebühr und Tragservice.</span></li>
           <li><span class="dot bg-amber"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Fahreransicht am Telefon:</b> nur das eigene Fahrzeug, mit Navigation und Anruf beim Kunden.</span></li>
           <li><span class="dot bg-gruen"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>An der Tür:</b> Zustellung bestätigen, Abweichungen als Rücknahme, Leergut zählen, kassieren.</span></li>
         </ul>
+      <p class="weiter"><a class="leise" href="/funktionen/touren/">Touren und Auslieferung</a><a class="leise" href="/funktionen/online-bestellung/">Lieferregeln</a></p>
     </div>
   </div>
 </section>
 
-<section class="block" id="kasse">
+<section class="block soft" id="kasse">
   <div class="wrap split breit-bild">
     <div>
       <div class="eyebrow">Kasse</div>
@@ -194,20 +250,21 @@
           <li><span class="dot bg-amber"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Bon auf 80 mm oder per QR-Code:</b> Kassenabschluss je Schicht, Kassenbuch, Exporte für die Betriebsprüfung.</span></li>
           <li><span class="dot bg-gruen"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Schulungsmodus:</b> üben, bevor echte Bons entstehen.</span></li>
         </ul>
-      <p class="hinweis-kasten">Vor dem Einsatz im Laden richten wir die TSE mit Ihnen ein und stimmen die Kassenunterlagen mit Ihrer Steuerkanzlei ab.</p>
+      <p class="hinweis-kasten">Vor dem Einsatz im Laden richten wir die TSE mit Ihnen ein und stimmen die Kassenunterlagen mit Ihrer Steuerkanzlei ab. Bis dahin läuft die Kasse im Schulungs- und Demomodus.</p>
+      <p class="weiter"><a class="leise" href="/funktionen/kasse/">Die Kasse und ihr Stand heute</a></p>
     </div>
     <figure>
-      <div class="tablet-rahmen"><img src="/assets/screens/kasse-hell-1440.webp" srcset="/assets/screens/kasse-hell-800.webp 800w, /assets/screens/kasse-hell-1440.webp 1440w, /assets/screens/kasse-hell-2360.webp 2360w" sizes="(max-width: 900px) 100vw, 620px" width="1180" height="820" loading="lazy" decoding="async" alt="Kasse am Tablet: Bon mit Bier, Wasser und Aperol samt Pfand, Leergut-Rücknahme über 6,76 € und 49,13 € zu zahlen; rechts die Schnelltasten"></div>
+      <div class="tablet-rahmen"><img src="/assets/screens/kasse-verkauf-1180.webp" srcset="/assets/screens/kasse-verkauf-800.webp 800w, /assets/screens/kasse-verkauf-1180.webp 1180w, /assets/screens/kasse-verkauf-2360.webp 2360w" sizes="(max-width: 900px) 100vw, 620px" width="1180" height="820" loading="lazy" decoding="async" alt="Kasse am Tablet: Bon mit Bier, Wasser und Aperol samt Pfand, Leergut-Rücknahme über 6,76 € und 49,13 € zu zahlen; rechts die Schnelltasten"></div>
       <figcaption>Verkauf am Tablet – mit Pfand, Leergut und Schnelltasten.</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="block soft" id="rechnung">
+<section class="block" id="rechnung">
   <div class="wrap split breit-bild links">
     <div class="bild-zuerst">
     <figure>
-          <div class="bild-rahmen"><div class="kopf" aria-hidden="true"><i></i><i></i><i></i><span>erp.ordaneo.de</span></div><img src="/assets/screens/erechnung-hell-1440.webp" srcset="/assets/screens/erechnung-hell-800.webp 800w, /assets/screens/erechnung-hell-1440.webp 1440w, /assets/screens/erechnung-hell-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 620px" width="1440" height="900" loading="lazy" decoding="async" alt="Festgeschriebene Rechnung mit Positionen und Pfand; daneben die Karte „E-Rechnung“ mit der ausgestellten XRechnung im Format UBL zum Herunterladen"></div>
+          <div class="bild-rahmen"><div class="kopf" aria-hidden="true"><i></i><i></i><i></i><span>erp.ordaneo.de</span></div><img src="/assets/screens/erechnung-rechnung-1440.webp" srcset="/assets/screens/erechnung-rechnung-800.webp 800w, /assets/screens/erechnung-rechnung-1440.webp 1440w, /assets/screens/erechnung-rechnung-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 620px" width="1440" height="900" loading="lazy" decoding="async" alt="Festgeschriebene Rechnung mit Positionen und Pfand; daneben die Karte „E-Rechnung“ mit der ausgestellten XRechnung im Format UBL zum Herunterladen"></div>
           <figcaption>Festgeschriebene Rechnung mit ausgestellter XRechnung.</figcaption>
         </figure>
     </div>
@@ -221,14 +278,15 @@
           <li><span class="dot bg-amber"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Steuerfall je Kunde:</b> Unternehmen in der EU, Drittland, Steuerschuldnerschaft des Leistungsempfängers.</span></li>
           <li><span class="dot bg-gruen"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Offene Posten:</b> Zahlungen mit Skonto, Mahnlauf, Buchungsexport für die Steuerkanzlei – und Versand per E-Mail mit Postausgang.</span></li>
         </ul>
+      <p class="weiter"><a class="leise" href="/funktionen/e-rechnung/">E-Rechnung</a><a class="leise" href="/funktionen/rechnung/">Rechnung und Mahnwesen</a></p>
     </div>
   </div>
 </section>
 
-<section class="block" id="apps">
+<section class="block soft" id="apps">
   <div class="wrap split">
     <figure class="bild-zuerst">
-      <div class="handy-rahmen"><img src="/assets/screens/app-hell-846.webp" srcset="/assets/screens/app-hell-564.webp 564w, /assets/screens/app-hell-846.webp 846w" sizes="300px" width="390" height="844" loading="lazy" decoding="async" alt="Inventur am Telefon: Blindzählung je Lagerplatz mit Fortschritt 6 von 12, einer offenen Nachzählung und dem nächsten Platz"></div>
+      <div class="handy-rahmen"><img src="/assets/screens/inventur-zaehlen-780.webp" srcset="/assets/screens/inventur-zaehlen-390.webp 390w, /assets/screens/inventur-zaehlen-780.webp 780w" sizes="300px" width="390" height="844" loading="lazy" decoding="async" alt="Inventur am Telefon: Blindzählung je Lagerplatz mit Fortschritt 6 von 12, einer offenen Nachzählung und dem nächsten Platz"></div>
       <figcaption>Inventur am Telefon – blind gezählt.</figcaption>
     </figure>
     <div>
@@ -241,23 +299,24 @@
           <li><span class="dot bg-amber"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Leergut zählen:</b> große Tasten je Pfandart, Mischkasten inklusive.</span></li>
         </ul>
       <p class="hinweis-kasten">Die Apps sind gebaut; die Veröffentlichung in den App-Stores folgt.</p>
+      <p class="weiter"><a class="leise" href="/funktionen/apps-scannen/">Apps und Scannen</a></p>
     </div>
   </div>
 </section>
 
-<section class="block soft" id="mehr">
+<section class="block" id="mehr">
   <div class="wrap">
     <div class="eyebrow">Außerdem an Bord</div>
     <h2>Was ein Handelsbetrieb sonst noch braucht</h2>
     <div class="fx-grid">
-        <div class="fx"><div class="ikon bg-violett"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.6-1.2L21 8H6.6"/></svg></div><div><h3>Einkauf und Disposition</h3><p>Bestellvorschlag je Lieferant mit Bestelltag und Lieferzeit, Anforderungen der Filialen, Bestellung per E-Mail und Rechnungsprüfung: bestellt, geliefert, berechnet.</p></div></div>
-        <div class="fx"><div class="ikon bg-blau"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><div><h3>Verkauf und Aufträge</h3><p>Angebot, Auftrag, Lieferschein, Rücknahme. Dazu Kommission für Feste – berechnet wird, was nicht voll zurückkommt –, Verleih mit Verfügbarkeit je Tag und Telefonbestellung mit Lieferfenster.</p></div></div>
-        <div class="fx"><div class="ikon bg-teal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4.5h-4.5"/></svg></div><div><h3>Pfand und Leergut</h3><p>Pfandarten von der Flasche bis zum KEG, Kastenpfand als Summe seiner Teile, Leergutkonten für Kunden und Lieferanten. Abschaltbar für Betriebe ohne Pfand.</p></div></div>
-        <div class="fx"><div class="ikon bg-rose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></div><div><h3>Preise und Aktionen</h3><p>Preislisten brutto oder netto mit Staffeln und Gültigkeit, Massenänderung mit Vorschau, Aktionen und Abschriften mit Freigabe, Etiketten.</p></div></div>
-        <div class="fx"><div class="ikon bg-gruen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.5h6V4M8.5 12.5l2.4 2.4 4.6-4.6"/></svg></div><div><h3>Inventur</h3><p>Stichtags- und permanente Inventur. Blind am Telefon zählen, Nachzählung durch eine andere Person, Differenzen freigeben, Inventurliste als A4 und CSV.</p></div></div>
-        <div class="fx"><div class="ikon bg-amber"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div><h3>Auswertungen</h3><p>Kennzahlen je Rolle, Umsatz und Rohertrag, Renner und Penner, Ladenhüter, ablaufende Chargen und Schwund – mit Sprung bis zum einzelnen Beleg.</p></div></div>
-        <div class="fx"><div class="ikon bg-navy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><div><h3>Bestell-Apps und Schnittstellen</h3><p>Ihre Bestell-App liest Katalog, Preise und Verfügbarkeit und übergibt Bestellungen; Ordaneo meldet Änderungen per Webhook. Abholung im Markt mit Abholcode.</p></div></div>
-        <div class="fx"><div class="ikon bg-violett"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"/></svg></div><div><h3>Assistent, wenn Sie möchten</h3><p>Fragen in eigenen Worten: „Was müssen wir diese Woche bestellen?“ Ändern darf er nur mit Ihren Rechten, nach Vorschau und Bestätigung. Er nutzt ein Sprachmodell eines externen Anbieters und ist aus, bis die Geschäftsführung ihn einschaltet.</p></div></div>
+        <a class="fx" href="/funktionen/einkauf/"><div class="ikon bg-violett"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.6-1.2L21 8H6.6"/></svg></div><div><h3>Einkauf und Disposition</h3><p>Bestellvorschlag je Lieferant mit Bestelltag und Lieferzeit, Anforderungen der Filialen, Bestellung per E-Mail und Rechnungsprüfung: bestellt, geliefert, berechnet.</p></div></a>
+        <a class="fx" href="/funktionen/verkauf/"><div class="ikon bg-blau"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><div><h3>Verkauf und Aufträge</h3><p>Angebot, Auftrag, Lieferschein, Rücknahme. Dazu Kommission für Feste – berechnet wird, was nicht voll zurückkommt –, Verleih mit Verfügbarkeit je Tag und Telefonbestellung mit Lieferfenster.</p></div></a>
+        <a class="fx" href="/funktionen/pfand-leergut/"><div class="ikon bg-teal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4.5h-4.5"/></svg></div><div><h3>Pfand und Leergut</h3><p>Pfandarten von der Flasche bis zum KEG, Kastenpfand als Summe seiner Teile, Leergutkonten für Kunden und Lieferanten. Abschaltbar für Betriebe ohne Pfand.</p></div></a>
+        <a class="fx" href="/funktionen/preise-aktionen/"><div class="ikon bg-rose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></div><div><h3>Preise und Aktionen</h3><p>Preislisten brutto oder netto mit Staffeln und Gültigkeit, Massenänderung mit Vorschau, Aktionen und Abschriften mit Freigabe, Etiketten.</p></div></a>
+        <a class="fx" href="/funktionen/inventur/"><div class="ikon bg-gruen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.5h6V4M8.5 12.5l2.4 2.4 4.6-4.6"/></svg></div><div><h3>Inventur</h3><p>Stichtags- und permanente Inventur. Blind am Telefon zählen, Nachzählung durch eine andere Person, Differenzen freigeben, Inventurliste als A4 und CSV.</p></div></a>
+        <a class="fx" href="/funktionen/auswertungen/"><div class="ikon bg-amber"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div><h3>Auswertungen</h3><p>Kennzahlen je Rolle, Umsatz und Rohertrag, Renner und Penner, Ladenhüter, ablaufende Chargen und Schwund – mit Sprung bis zum einzelnen Beleg.</p></div></a>
+        <a class="fx" href="/funktionen/online-bestellung/"><div class="ikon bg-navy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><div><h3>Bestell-Apps und Schnittstellen</h3><p>Ihre Bestell-App liest Katalog, Preise und Verfügbarkeit und übergibt Bestellungen; Ordaneo meldet Änderungen per Webhook. Abholung im Markt mit Abholcode.</p></div></a>
+        <a class="fx" href="/funktionen/ki-assistent/"><div class="ikon bg-violett"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"/></svg></div><div><h3>Assistent, wenn Sie möchten</h3><p>Fragen in eigenen Worten: „Was müssen wir diese Woche bestellen?“ Ändern darf er nur mit Ihren Rechten, nach Vorschau und Bestätigung. Er nutzt ein Sprachmodell eines externen Anbieters und ist aus, bis die Geschäftsführung ihn einschaltet.</p></div></a>
     </div>
   </div>
 </section>
@@ -265,7 +324,7 @@
 <section class="block band" id="zugriff">
   <div class="wrap">
     <div class="eyebrow">Zugriff und Betrieb</div>
-    <h2>Wer was darf, wer was getan hat – und wo die Daten liegen</h2>
+    <h2>Wer was darf, wer was getan hat&nbsp;– und wo die Daten liegen</h2>
     <div class="band-grid">
         <div><h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Anmeldung mit Zwei-Faktor</h3><p>Kennwort mit mindestens zwölf Zeichen, Zwei-Faktor per Authenticator-App mit Wiederherstellungscodes, als Pflicht je Betrieb oder Rolle. Sitzungen und Geräte sehen und beenden Sie selbst.</p></div>
         <div><h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20"/><circle cx="10" cy="8" r="3.5"/><path d="M20 20v-1.5a3.5 3.5 0 0 0-2.6-3.4M15.5 4.6a3.5 3.5 0 0 1 0 6.8"/></svg>Rechte je Rolle und Standort</h3><p>Die Filialleitung sieht ihre Filiale, der Fahrer sein Fahrzeug, Einkaufspreise nur, wer sie sehen darf. Über den Grenzen für Rabatt, Bestellwert und Korrekturen gibt eine zweite Person per PIN frei.</p></div>
@@ -274,6 +333,7 @@
         <div><h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Datensicherung</h3><p>Für den Betrieb gebaut: fortlaufende, verschlüsselte Sicherung an einen getrennten Speicherort, monatliche Rücksicherungsprobe, Überwachung mit Alarm, Archiv mit Löschsperre. Eingerichtet wird das gemeinsam bei der Einführung.</p></div>
         <div><h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="1.8"/><rect x="3" y="13" width="18" height="7" rx="1.8"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>Betrieb heute</h3><p>Ordaneo läuft im Browser, ohne Installation an den Arbeitsplätzen. Die Anwendung läuft heute auf einem Server in Nürnberg und ist über HTTPS erreichbar.</p></div>
     </div>
+    <p class="band-links"><a class="leise" href="/funktionen/rechte-freigaben/">Rechte, Freigaben und Protokoll</a><a class="leise" href="/sicherheit/">Sicherheit und Betrieb</a></p>
   </div>
 </section>
 
@@ -286,14 +346,16 @@
         <div class="profil">
           <h3>Getränkefachhandel</h3>
           <p>Zentrallager, Märkte und eigene Fahrzeuge.</p>
-          <ul class="schalter"><li>Pfand und Leergut<span class="an">an</span></li><li>Chargen und MHD<span class="an">an</span></li><li>Kommission und Leihartikel<span class="an">an</span></li><li>Altersprüfung<span class="an">an</span></li><li>Kasse<span class="an">an</span></li></ul>
-          <p class="fuss">Gebinde: Flasche · Kasten · KEG</p>
+          <ul class="schalter"><li>Pfand und Leergut<span class="an">an</span></li><li>Chargen und MHD<span class="an">an</span></li><li>Seriennummern<span class="an">an</span></li><li>Kommission und Leihartikel<span class="an">an</span></li><li>Kasse<span class="an">an</span></li></ul>
+          <p class="fuss">Gebinde: Flasche · Kasten · Lage · Palette · KEG</p>
+          <a class="leise" href="/branchen/getraenkehandel/">Für den Getränkehandel</a>
         </div>
         <div class="profil">
           <h3>Eisenwaren- und Werkzeughandel</h3>
           <p>Ein Lager, zwei Läden, keine Fahrzeuge.</p>
-          <ul class="schalter"><li>Pfand und Leergut<span class="aus">aus</span></li><li>Chargen und MHD<span class="aus">aus</span></li><li>Seriennummern<span class="an">an</span></li><li>Lagerplätze<span class="an">an</span></li><li>Kasse<span class="an">an</span></li></ul>
+          <ul class="schalter"><li>Pfand und Leergut<span class="aus">aus</span></li><li>Chargen und MHD<span class="aus">aus</span></li><li>Seriennummern<span class="an">an</span></li><li>Kommission und Leihartikel<span class="aus">aus</span></li><li>Kasse<span class="an">an</span></li></ul>
           <p class="fuss">Kabel nach Metern, Nägel nach Gewicht, Lack nach Litern – umgerechnet am Artikel.</p>
+          <a class="leise" href="/branchen/fachhandel/">Für den Fach- und Eisenwarenhandel</a>
         </div>
     </div>
     <p class="leise-text">Beide Profile stammen aus den Beispielbetrieben, mit denen Ordaneo vorgeführt wird: eine Software, zwei Branchen. Personen, Kunden, Preise und Bestände darin sind erfunden.</p>
@@ -317,13 +379,14 @@
     </div>
     <div class="grundsaetze">
       <h3>Grundsätze, die überall gelten</h3>
-      <ul class="punkte" style="display:contents">
+      <ul class="punkte">
           <li><span class="dot bg-blau"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Vorschau vor jeder Änderung:</b> in der Oberfläche, über die Schnittstelle und beim Assistenten.</span></li>
           <li><span class="dot bg-violett"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Storno statt Löschen:</b> festgeschrieben ist festgeschrieben, Nummernkreise bleiben lückenlos.</span></li>
           <li><span class="dot bg-amber"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Vier Augen, wo es um Geld und Bestand geht:</b> Freigaben über der Grenze, Nachzählung, Differenzen.</span></li>
           <li><span class="dot bg-gruen"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Eine Hausfarbe je Betrieb:</b> Ihr Logo und Ihre Farbe in der Anwendung, alles andere bleibt neutral.</span></li>
         </ul>
     </div>
+    <p class="weiter"><a class="leise" href="/einfuehrung/">So läuft die Einführung</a></p>
   </div>
 </section>
 
@@ -336,13 +399,14 @@
         <details><summary>Wie kommen unsere Daten hinein?</summary><div class="antwort"><p>Artikel, Kunden, Lieferanten und Preise kommen über den Import. Ein Probelauf zeigt vorher, was eingespielt würde.</p></div></details>
         <details><summary>Wer sieht Einkaufspreise und Umsätze?</summary><div class="antwort"><p>Nur, wer das Recht dazu hat. Rechte gelten je Rolle und Standort: Die Filialleitung sieht ihre Filiale, der Fahrer sein Fahrzeug.</p></div></details>
         <details><summary>Kann Ordaneo E-Rechnungen?</summary><div class="antwort"><p>Ja. Ausgang als XRechnung 3.0 im Format UBL oder CII, auch für Rechnungskorrektur und Storno. Eingang als XRechnung oder ZUGFeRD-PDF – mit Prüfung und Zuordnung im Einkauf.</p></div></details>
-        <details><summary>Lässt sich unsere Bestell-App anbinden?</summary><div class="antwort"><p>Ja. Ihre Bestell-App liest Katalog, Preise und Verfügbarkeit und übergibt Bestellungen; Ordaneo meldet Änderungen per Webhook. Abholung im Markt mit Abholcode und Aktionen in der App sind vorgesehen.</p></div></details>
-        <details><summary>Wo laufen Anwendung und Daten?</summary><div class="antwort"><p>Ordaneo läuft im Browser, ohne Installation an den Arbeitsplätzen. Die Anwendung läuft heute auf einem Server in Nürnberg und ist über HTTPS erreichbar. Die Datensicherung richten wir gemeinsam bei der Einführung ein.</p></div></details>
+        <details><summary>Lässt sich unsere Bestell-App anbinden?</summary><div class="antwort"><p>Ja. Ihre Bestell-App liest Katalog, Preise und Verfügbarkeit und übergibt Bestellungen; Ordaneo meldet Änderungen per Webhook. Abholung im Markt mit Abholcode und Werbe-Mitteilungen zu Aktionen in der App gibt es auch.</p></div></details>
+        <details><summary>Wo laufen Anwendung und Daten?</summary><div class="antwort"><p>Ordaneo läuft im Browser, ohne Installation an den Arbeitsplätzen. Die Anwendung läuft heute auf einem Server in Nürnberg und ist über HTTPS erreichbar. Der Assistent nutzt – wenn Sie ihn einschalten – das Sprachmodell eines externen Anbieters. Die Datensicherung richten wir gemeinsam bei der Einführung ein.</p></div></details>
     </div>
+    <p class="weiter"><a class="leise" href="/fragen/">Alle häufigen Fragen</a></p>
   </div>
 </section>
 
-<section class="block" id="kontakt" style="padding-top:12px">
+<section class="block eng-oben" id="kontakt">
   <div class="wrap">
     <div class="cta-band">
       <h2>Sprechen wir über Ihren Betrieb</h2>
@@ -361,13 +425,14 @@
       <div class="karte">
         <h3>Zur Demo</h3>
         <p>Die Demo unter erp.ordaneo.de enthält nur erfundene Personen, Kunden, Preise und Bestände. Bitte geben Sie dort keine echten Daten ein.</p>
-        <a class="leise" href="https://erp.ordaneo.de" style="display:inline-block;margin-top:12px">Demo öffnen</a>
+        <a class="leise" href="https://erp.ordaneo.de">Demo öffnen</a>
       </div>
     </div>
   </div>
 </section>
 </main>
 
+<!-- FUSS -->
 <footer class="gross">
   <div class="wrap">
     <div class="fuss-grid">
@@ -376,17 +441,19 @@
         <p>Die Warenwirtschaft für Handel und Großhandel – Lager, Einkauf, Verkauf, Touren und Kasse in einer Anwendung.</p>
         <p>Ein Produkt der Presio UG (haftungsbeschränkt) i.&nbsp;Gr.</p>
       </div>
-      <div>
+      <div class="fuss-funktionen">
         <h4>Funktionen</h4>
-        <a href="#lager">Lager &amp; Bestand</a><a href="#ablauf">Einkauf &amp; Aufträge</a><a href="#touren">Touren &amp; Auslieferung</a><a href="#kasse">Kasse</a><a href="#rechnung">Rechnung &amp; E-Rechnung</a><a href="#apps">Apps</a>
+        <div class="fuss-zwei"><a href="/funktionen/lager-bestand/">Lager &amp; Bestand</a><a href="/funktionen/chargen-mhd/">Chargen &amp; MHD</a><a href="/funktionen/pfand-leergut/">Pfand &amp; Leergut</a><a href="/funktionen/inventur/">Inventur</a><a href="/funktionen/einkauf/">Einkauf</a><a href="/funktionen/verkauf/">Verkauf, Kommission &amp; Verleih</a><a href="/funktionen/preise-aktionen/">Preise &amp; Aktionen</a><a href="/funktionen/online-bestellung/">Online-Bestellung &amp; Abholung</a><a href="/funktionen/touren/">Touren &amp; Auslieferung</a><a href="/funktionen/kasse/">Kasse</a><a href="/funktionen/rechnung/">Rechnung &amp; Mahnwesen</a><a href="/funktionen/e-rechnung/">E-Rechnung</a><a href="/funktionen/auswertungen/">Auswertungen</a><a href="/funktionen/ki-assistent/">KI-Assistent</a><a href="/funktionen/rechte-freigaben/">Rechte &amp; Freigaben</a><a href="/funktionen/apps-scannen/">Apps &amp; Scannen</a></div>
       </div>
       <div>
-        <h4>Ordaneo</h4>
-        <a href="#ablauf">Ablauf und Belege</a><a href="#branchen">Branchen</a><a href="#einfuehrung">Einführung</a><a href="#fragen">Häufige Fragen</a><a href="https://erp.ordaneo.de">Demo</a>
+        <h4>Branchen</h4>
+        <a href="/branchen/getraenkehandel/">Getränkehandel</a><a href="/branchen/fachhandel/">Fach- und Eisenwarenhandel</a><a href="/branchen/">Alle Branchen</a>
+        <h4 class="weiter">Ordaneo</h4>
+        <a href="/funktionen/">Alle Funktionen</a><a href="/einfuehrung/">Einführung</a><a href="/sicherheit/">Sicherheit und Betrieb</a><a href="/fragen/">Häufige Fragen</a><a href="https://erp.ordaneo.de">Demo</a>
       </div>
       <div>
         <h4>Kontakt</h4>
-        <a href="#kontakt">Gespräch vereinbaren</a><a href="mailto:kontakt@ordaneo.de">kontakt@ordaneo.de</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a>
+        <a href="/#kontakt">Gespräch vereinbaren</a><a href="mailto:kontakt@ordaneo.de">kontakt@ordaneo.de</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a>
       </div>
     </div>
     <div class="fuss-unten">
@@ -395,5 +462,6 @@
     </div>
   </div>
 </footer>
+<!-- /FUSS -->
 </body>
 </html>
