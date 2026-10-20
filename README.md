@@ -178,6 +178,9 @@ DMARC-Einträge des Mail-Anbieters diese Vorlage.
   Anwendung; alles rechtlich prüfen lassen; dann die Hinweise „Entwurf – vor Veröffentlichung prüfen“ entfernen.
 - **Postfach `kontakt@ordaneo.de` muss noch eingerichtet werden** (MX und SPF/DKIM/DMARC bei Squarespace). Bis dahin
   laufen E-Mail-Links ins Leere (Stand 21.10.2026: kein MX, SPF `-all`, DMARC `reject`).
+- **Kasse:** bis zur Abstimmung mit der Steuerkanzlei (§ 146a Abs. 1 Satz 5 AO) als „Echtbetrieb in Vorbereitung“
+  geführt – Kassenseite (Hero, Beschreibung), Startseite (Karte, Abschnitt) und Funktionsübersicht. Nach der Freigabe
+  den Commit „Kasse bis zur Abstimmung …“ mit `git revert` zurücknehmen.
 - **`erp.ordaneo.de`** ist seit 20.10.2026 eingerichtet (DNS, Server, Zertifikat); alle „Demo ansehen“-Knöpfe zeigen
   dorthin. Den neuen Namen zeigt die Anwendung erst, wenn der Umbenennungs-Zweig ausgeliefert ist.
 - **Öffentliche Demo:** Unter „Demo-Zugänge“ stehen nur erfundene Betriebe (gilt ab der Auslieferung vom 20.10.2026).
