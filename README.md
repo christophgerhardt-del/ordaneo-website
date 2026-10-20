@@ -18,6 +18,7 @@ Stand: 20.10.2026 · **Noch nicht veröffentlicht** – offene Punkte unten.
 | `assets/site.css` | alle Stile, Farben als Variablen, hell und dunkel über `prefers-color-scheme` |
 | `assets/fonts/` | Inter (opsz + wght) und Geist Mono (wght) als WOFF2, Untermengen `latin` und `latin-ext`, mit Lizenz (SIL OFL 1.1) |
 | `assets/brand/` | Marke: Bildmarke, Wortmarke, Lockup, Favicons, `BRAND.md` |
+| `assets/screens/` | Produktbilder als WebP, hell und dunkel, je zwei bis drei Breiten (siehe „Produktbilder“) |
 | `assets/og.png` | Vorschaubild für geteilte Links (1200 × 630), gerendert aus `tools/og.html` |
 | `favicon.ico`, `site.webmanifest` | Favicon (16/32/48, in Chrome aus `assets/brand/favicon.svg` gerendert) und Symbole für den Startbildschirm |
 | `robots.txt`, `sitemap.xml`, `CNAME` | Suchmaschinen und eigene Domain (`ordaneo.com`) |
@@ -38,25 +39,33 @@ python3 -m http.server 9370 --bind 127.0.0.1
 Die Fehlerseite unter http://127.0.0.1:9370/404.html ansehen (der Python-Server zeigt bei unbekannten Adressen seine
 eigene Fehlerseite, GitHub Pages dagegen `404.html`).
 
-## Produktbilder einsetzen
+## Produktbilder
 
-Auf der Startseite stehen sechs Platzhalter-Rahmen, erkennbar an `data-shot`:
+Die sechs Bilder auf der Startseite (`<figure data-shot="…">`) sind echte Bildschirmfotos der umbenannten Anwendung
+(Stand 20.10.2026, Worktree `warenwirtschaft-ordaneo`, Demo-Daten), je hell und dunkel. Sie liegen als WebP in
+`assets/screens/<name>-<hell|dunkel>-<breite>.webp`; ein `<picture>` wählt über `prefers-color-scheme` das passende
+Thema und über `srcset`/`sizes` die Breite.
 
-| `data-shot` | Abschnitt | Format des Rahmens |
-|---|---|---|
-| `übersicht` | Hero | Browser, 16 : 10 |
-| `bestand` | Lager und Bestand | Browser, 16 : 10 |
-| `tour` | Touren und Auslieferung | Browser, 16 : 10 |
-| `kasse` | Kasse | Browser, 16 : 10 |
-| `erechnung` | Rechnung und E-Rechnung | Browser, 16 : 10 |
-| `app` | Apps für Tablet und Telefon | Telefon, 9 : 19,5 |
+| `data-shot` | Datei | Ansicht | Aufnahme |
+|---|---|---|---|
+| `übersicht` | `uebersicht` | Start der Geschäftsführung (Johanna) | Desktop 1440 × 900, 2× |
+| `bestand` | `bestand` | Lager › MHD & Chargen, „Alle Chargen“, alle Standorte | Desktop 1440 × 900, 2× |
+| `tour` | `tour` | Verkauf › Disposition, Seitenleiste eingeklappt | Desktop 1440 × 900, 2× |
+| `kasse` | `kasse` | Kasse › Kassieren (Lea), Bon aus der Demo-Geschichte (49,13 €) | iPad quer 1180 × 820, 2× (Rahmen `shot--tablet`) |
+| `erechnung` | `erechnung` | Rechnung mit Karte „E-Rechnung“ (Claudia) | Desktop 1440 × 900, 2× |
+| `app` | `app` | Inventur › Zählen am Telefon (Petra) | Telefon 390 × 844, 3× (Rahmen `shot--phone`) |
 
-So wird ein Bild eingesetzt: Datei nach `assets/shots/<name>.png` (oder `.webp`) legen, im `<figure data-shot="…">` den
-Inhalt von `<div class="shot-body is-placeholder" …>` ersetzen durch
-`<img src="assets/shots/<name>.png" alt="<Text aus data-alt>" width="…" height="…" loading="lazy">`, dann am `div` die
-Klasse `is-placeholder` sowie `role` und `aria-label` entfernen. Das Bild bestimmt danach die Höhe selbst. Das erste Bild
-(`übersicht`) ohne `loading="lazy"`. Für hell und dunkel getrennte Bilder geht `<picture>` mit
-`<source media="(prefers-color-scheme: dark)" srcset="…">`. Nur erfundene Demo-Daten zeigen, keinen Kundennamen.
+**Was an den Bildern bearbeitet ist:** Der Demo-Betrieb trägt in der Anwendung Namen, Logo, Standorte und
+Artikelnummern des Erstkunden. Für die Aufnahmen wurde deshalb nur in einer eigenen, danach gelöschten Datenbank
+umbenannt: Betrieb „Getränke Muster“ ohne Logo und Hausfarbe, Orte „Nordstadt“, „Oststadt“, „Weststadt“ (mit
+erfundenen Postleitzahlen und Straßen der Standorte), Kennzeichen `M-OD …`, Artikelnummern `GM-…` statt `AL-…`. Für
+die Disposition wurde die nur geplante Tour 3 abgebrochen, damit planbare Aufträge zu sehen sind, und die Kartenkacheln
+(OpenStreetMap) sind weichgezeichnet, damit keine Ortsnamen den Standort des Erstkunden verraten. Sonst ist nichts
+retuschiert; die Hinweise „Demo-Daten“, „Schulungsbeleg (DEMO)“ und „DEMO – keine TSE“ sind echt und bleiben sichtbar.
+
+Neue Bilder: dieselben Ansichten in Chrome aufnehmen (Playwright, `colorScheme` hell und dunkel), wieder nur
+erfundene Daten und keinen Kundennamen zeigen, als WebP (Qualität etwa 82) in den Breiten 800, 1440 und 2400 (Telefon 564 und 846) ablegen und die
+Dateinamen im `<picture>` anpassen. Das erste Bild (`übersicht`) lädt ohne `loading="lazy"`.
 
 ## Open-Graph-Bild neu rendern
 
@@ -123,7 +132,8 @@ GitHub-Pages-Seite mit eigener `CNAME` betrieben werden, die per Meta-Refresh we
 - **`erp.ordaneo.com`** ist noch nicht eingerichtet (DNS und Server). Alle „Demo ansehen“-Knöpfe zeigen dorthin.
 - **Die Demo zeigt heute Namen und Logo des Erstkunden** und noch den alten Namen der Anwendung. Bevor die Website auf
   die Demo verlinkt, klären, ob das so öffentlich sein darf (sonst einen neutralen Beispielbetrieb voranstellen).
-- **Produktbilder** einsetzen (siehe oben).
+- **Produktbilder** zeigen einen umbenannten Demo-Betrieb (siehe „Produktbilder“). Die öffentliche Demo sieht anders aus,
+  solange sie den Erstkunden zeigt – beim Umstellen der Demo die Bilder bei Bedarf neu aufnehmen.
 - Hinweis zu den Apps („Veröffentlichung in den App-Stores folgt“) anpassen, sobald sie in den Stores sind.
 
 ## Regeln für Texte

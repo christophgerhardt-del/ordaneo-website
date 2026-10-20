@@ -237,8 +237,8 @@ section[id], [id].anchor { scroll-margin-top: 80px; }
 .hero .hero-shot { margin-top: 48px; }
 @media (min-width: 1024px) { .hero .hero-shot { margin-top: 72px; } }
 
-/* ---------- Platzhalter für Produktbilder ----------
-   Ein späterer Schritt ersetzt den Inhalt von .shot-body durch <img …> und entfernt .is-placeholder. */
+/* ---------- Produktbilder ----------
+   .shot-body trägt ein <picture> (hell/dunkel); .is-placeholder bleibt für künftige, noch fehlende Bilder. */
 .shot { margin: 0; }
 .shot-frame {
   border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface);
@@ -254,6 +254,7 @@ section[id], [id].anchor { scroll-margin-top: 80px; }
   max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .shot-body { position: relative; background: var(--surface); }
+.shot-body picture { display: block; }
 .shot-body img { width: 100%; height: auto; }
 .shot-body.is-placeholder {
   aspect-ratio: 16 / 10;
@@ -278,6 +279,17 @@ section[id], [id].anchor { scroll-margin-top: 80px; }
 .shot--phone .shot-body { border-radius: 31px; overflow: hidden; }
 .shot--phone .shot-body.is-placeholder { aspect-ratio: 9 / 19.5; }
 .shot--phone figcaption { text-align: center; }
+
+/* Tablet quer (Kasse): Gehäuse statt Browserleiste */
+.shot--tablet .shot-frame {
+  border-radius: 26px; border: 11px solid #15171b; background: #15171b; box-shadow: var(--shadow);
+}
+@media (prefers-color-scheme: dark) { .shot--tablet .shot-frame { border-color: #2a2e35; background: #2a2e35; } }
+.shot--tablet .shot-body { border-radius: 15px; overflow: hidden; }
+@media (max-width: 479px) {
+  .shot--tablet .shot-frame { border-width: 7px; border-radius: 18px; }
+  .shot--tablet .shot-body { border-radius: 11px; }
+}
 
 /* ---------- Ablauf (Belegkette) ---------- */
 .flow { display: grid; gap: 40px; }
@@ -305,6 +317,7 @@ section[id], [id].anchor { scroll-margin-top: 80px; }
 .feature { display: grid; gap: 32px; align-items: center; }
 @media (min-width: 960px) {
   .feature { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; }
+  .feature.is-flipped { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
   .feature.is-flipped > .feature-text { order: 2; }
   .feature.is-phone { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
 }
