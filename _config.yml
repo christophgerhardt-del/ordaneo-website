@@ -1,0 +1,6 @@
+# GitHub Pages: Die Seite ist reines HTML ohne Build-Schritt. Jekyll kopiert die Dateien nur;
+# diese Einträge werden nicht veröffentlicht.
+exclude:
+  - README.md
+  - tools
+  - assets/brand/BRAND.md

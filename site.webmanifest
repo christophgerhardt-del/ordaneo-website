@@ -1,0 +1,15 @@
+{
+  "name": "Ordaneo",
+  "short_name": "Ordaneo",
+  "description": "Warenwirtschaft für Handel und Großhandel",
+  "lang": "de",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f9fafb",
+  "theme_color": "#15171b",
+  "icons": [
+    { "src": "assets/brand/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/brand/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/brand/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

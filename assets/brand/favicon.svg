@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .k { fill: #15171b } .z { stroke: #f9fafb } .e { fill: #f9fafb }
+    @media (prefers-color-scheme: dark) { .k { fill: #f3f4f6 } .z { stroke: #0e1114 } .e { fill: #0e1114 } }
+  </style>
+  <rect class="k" width="32" height="32" rx="8"/>
+  <circle class="z" cx="12" cy="16" r="6.25" fill="none" stroke-width="3.5"/>
+  <rect class="e" x="22" y="18" width="6" height="6" rx="1.5"/>
+</svg>
