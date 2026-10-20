@@ -126,8 +126,6 @@ DMARC-Einträge des Mail-Anbieters diese Vorlage.
 - **`erp.ordaneo.de`** ist seit 20.10.2026 eingerichtet (DNS, Server, Zertifikat); alle „Demo ansehen“-Knöpfe zeigen
   dorthin. Den neuen Namen zeigt die Anwendung erst, wenn der Umbenennungs-Zweig ausgeliefert ist.
 - **Öffentliche Demo:** Unter „Demo-Zugänge“ stehen nur erfundene Betriebe (gilt ab der Auslieferung vom 20.10.2026).
-- **Produktbilder** zeigen einen erfundenen Getränkehandel und in der Seitenleiste noch die frühere Bildmarke – neu
-  aufnehmen (siehe „Produktbilder“).
 - Hinweis zu den Apps („Veröffentlichung in den App-Stores folgt“) anpassen, sobald sie in den Stores sind.
 
 ## Regeln für Texte
