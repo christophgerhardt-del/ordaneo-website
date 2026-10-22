@@ -171,8 +171,10 @@ DMARC-Einträge des Mail-Anbieters diese Vorlage.
 
 ## Offene Punkte
 
-- **Impressum und Datenschutz:** Anbieter ist die Presio UG (haftungsbeschränkt) i. Gr., Hohenzollernstr. 7,
-  80801 München (Angaben wie im Impressum von presio.eu). Vertretung und Verantwortlicher nach MStV wie im Impressum von presio.eu (Christoph Gerhardt). Seit 21.10.2026 eingetragen: Telefon
+- **Impressum und Datenschutz:** Anbieter ist die Presio UG (haftungsbeschränkt), Hohenzollernstr. 7,
+  80801 München (Angaben wie im Impressum von presio.eu). Vertretung und Verantwortlicher nach MStV wie im Impressum von presio.eu (Christoph Gerhardt). Seit 22.10.2026 eingetragen:
+  Registereintrag (Amtsgericht München, HRB 317500) und Vertretung durch den Geschäftsführer; die USt-IdNr. folgt nach
+  der steuerlichen Erfassung. Seit 21.10.2026 eingetragen: Telefon
   (Vertrieb, wie auf presio.eu), Aufsichtsbehörde (BayLDA), Grundlage der Übermittlung an GitHub (Data Privacy
   Framework), Speicherdauer beim Hoster. Noch offen: Postfach-Anbieter, Datenschutzbeauftragte(r), Hinweise der
   Anwendung; alles rechtlich prüfen lassen; dann die Hinweise „Entwurf – vor Veröffentlichung prüfen“ entfernen.

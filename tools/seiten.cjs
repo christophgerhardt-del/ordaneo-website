@@ -191,7 +191,7 @@ function fuss() {
       <div class="fuss-marke">
         ${LOGO}
         <p>Die Warenwirtschaft für Handel und Großhandel – Lager, Einkauf, Verkauf, Touren und Kasse in einer Anwendung.</p>
-        <p>Ein Produkt der Presio UG (haftungsbeschränkt) i.&nbsp;Gr.</p>
+        <p>Ein Produkt der Presio UG (haftungsbeschränkt).</p>
       </div>
       <div class="fuss-funktionen">
         <h4>Funktionen</h4>
@@ -209,7 +209,7 @@ function fuss() {
       </div>
     </div>
     <div class="fuss-unten">
-      <span>© 2026 Presio UG (haftungsbeschränkt) i.&nbsp;Gr.</span>
+      <span>© 2026 Presio UG (haftungsbeschränkt)</span>
       <nav aria-label="Rechtliches"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></nav>
     </div>
   </div>
